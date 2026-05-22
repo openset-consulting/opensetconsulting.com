@@ -283,6 +283,7 @@
         action="/thanks.html"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
+        data-netlify-recaptcha="true"
         novalidate
       >
         <input type="hidden" name="form-name" value="contact">
@@ -328,6 +329,10 @@
           <label for="f-message">What are you trying to solve?<span class="req" aria-hidden="true">*</span></label>
           <textarea id="f-message" name="message" rows="5" required placeholder="A few sentences on what's going on. The messier the better — I'd rather hear the real situation than a tidied-up version."></textarea>
           <span class="error-msg" id="err-message">A short description helps me prepare for our call.</span>
+        </div>
+
+        <div class="captcha-wrap">
+          <div data-netlify-recaptcha="true"></div>
         </div>
 
         <div class="form-actions">

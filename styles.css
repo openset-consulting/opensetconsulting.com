@@ -189,6 +189,10 @@ h1{font-family:'Newsreader',serif;font-weight:400;font-size:66px;line-height:1.0
 .form-note a{color:var(--ochre);text-decoration:underline;text-underline-offset:2px;}
 .honeypot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
 
+/* reCAPTCHA widget wrapper — keeps the light Google widget breathing nicely on the dark teal */
+.captcha-wrap{margin-top:6px;display:flex;justify-content:flex-start;}
+.captcha-wrap > div{background:rgba(244,240,232,.04);padding:8px;border-radius:4px;}
+
 /* ---------- FOOTER ---------- */
 footer{background:var(--paper-2);padding:64px 0 40px;}
 .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;}
