@@ -1,6 +1,9 @@
 # Mac
 .DS_Store
 
+# Claude Code (local tool config)
+.claude/
+
 # Editor
 .vscode/
 .idea/
