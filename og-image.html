@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OG image source</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{width:1200px;height:630px;overflow:hidden;}
+  body{
+    background:#F4F0E8;
+    font-family:'Space Grotesk',sans-serif;
+    color:#1A1814;
+    padding:80px 88px;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+
+  .top-row{display:flex;align-items:center;gap:18px;}
+  .mark{width:54px;height:54px;}
+  .brand{display:flex;flex-direction:column;}
+  .bn{font-family:'Newsreader',serif;font-size:30px;line-height:1;font-weight:500;color:#1A1814;}
+  .bs{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.32em;color:#A8482B;margin-top:6px;}
+
+  .headline{
+    font-family:'Newsreader',serif;
+    font-size:72px;
+    line-height:1.04;
+    letter-spacing:-.015em;
+    font-weight:400;
+    max-width:880px;
+    margin-top:24px;
+  }
+
+  .bottom-row{display:flex;justify-content:space-between;align-items:flex-end;}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:14px;
+    letter-spacing:.26em;
+    color:#A8482B;
+  }
+  .url{
+    font-family:'JetBrains Mono',monospace;
+    font-size:14px;
+    letter-spacing:.08em;
+    color:#595E54;
+  }
+
+  /* decorative diagram in the corner */
+  .diagram{
+    position:absolute;
+    right:-80px;
+    top:160px;
+    width:560px;
+    height:560px;
+    opacity:.55;
+  }
+  .ring-dash{fill:none;stroke:rgba(31,77,71,.35);stroke-width:1.2;stroke-dasharray:5 7;}
+  .ring-solid{fill:none;stroke:rgba(31,77,71,.55);stroke-width:1.2;}
+  .interior{fill:#C25E3C;}
+  .interior-halo{fill:rgba(194,94,60,.2);}
+  .pt-t{fill:#1F4D47;}
+  .pt-o{fill:#C99A4E;}
+  .pt-s{fill:#6B7066;}
+  .radial{stroke:rgba(31,77,71,.25);stroke-width:1;stroke-dasharray:2 4;}
+</style>
+</head>
+<body>
+
+<svg class="diagram" viewBox="0 0 400 400">
+  <g>
+    <line class="radial" x1="200" y1="200" x2="200" y2="40"/>
+    <line class="radial" x1="200" y1="200" x2="350" y2="290"/>
+    <line class="radial" x1="200" y1="200" x2="50" y2="290"/>
+  </g>
+  <circle class="ring-dash" cx="200" cy="200" r="170"/>
+  <circle class="ring-solid" cx="200" cy="200" r="100"/>
+  <circle class="ring-dash" cx="200" cy="200" r="54"/>
+  <circle class="interior-halo" cx="200" cy="200" r="24"/>
+  <circle class="interior" cx="200" cy="200" r="11"/>
+  <circle class="pt-t" cx="200" cy="55" r="6"/>
+  <circle class="pt-o" cx="335" cy="125" r="5"/>
+  <circle class="pt-t" cx="320" cy="300" r="6.5"/>
+  <circle class="pt-o" cx="80" cy="298" r="5"/>
+  <circle class="pt-s" cx="45" cy="170" r="4"/>
+  <circle class="pt-t" cx="150" cy="95" r="4"/>
+</svg>
+
+<div class="top-row">
+  <svg class="mark" viewBox="0 0 34 34">
+    <circle cx="17" cy="17" r="15.5" fill="none" stroke="#1A1814" stroke-width="1.5"/>
+    <circle cx="22" cy="13" r="7" fill="none" stroke="#1F4D47" stroke-width="1" stroke-dasharray="2 2.5"/>
+    <circle cx="22" cy="13" r="3.4" fill="#C25E3C"/>
+  </svg>
+  <div class="brand">
+    <div class="bn">Open Set</div>
+    <div class="bs">CONSULTING</div>
+  </div>
+</div>
+
+<div class="headline">
+  Grounded in where you are.<br>Open to where you're going.
+</div>
+
+<div class="bottom-row">
+  <div class="eyebrow">AI ADOPTION · ENGINEERING TRANSFORMATION</div>
+  <div class="url">opensetconsulting.com</div>
+</div>
+
+</body>
+</html>

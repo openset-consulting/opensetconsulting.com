@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /thanks.html
+Disallow: /og-image.html
+
+Sitemap: https://opensetconsulting.com/sitemap.xml
