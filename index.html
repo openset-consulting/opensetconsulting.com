@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Set Consulting — AI Adoption & Engineering Transformation</title>
+  <meta name="description" content="AI adoption that starts inside the work your engineers are already doing. Strategy, audit, and hands-on engineering leadership for AI transformation. Based in Richmond, Virginia.">
+  <meta name="theme-color" content="#1F4D47">
+
+  <meta property="og:title" content="Open Set Consulting — AI Adoption & Engineering Transformation">
+  <meta property="og:description" content="AI adoption that starts inside the work your engineers are already doing. Strategy, audit, and hands-on engineering leadership.">
+  <meta property="og:type" content="website">
+
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root{
+    --paper:#F4F0E8;
+    --paper-2:#EDE7DA;
+    --ink:#1A1814;
+    --ink-soft:#4A473F;
+    --teal:#1F4D47;
+    --teal-bright:#2E7D72;
+    --terra:#C25E3C;        /* decorative / large display only */
+    --terra-text:#A8482B;   /* AA-safe terracotta for small text on paper */
+    --terra-btn:#A8482B;    /* AA-safe button background, white text */
+    --ochre:#C99A4E;
+    --slate:#6B7066;        /* decorative / large only */
+    --slate-text:#595E54;   /* AA-safe for small captions on paper */
+    --line:#D9D2C4;
+    --line-dk:rgba(244,240,232,.18);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--paper);font-family:'Space Grotesk',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;}
+
+  /* ---------- FOCUS VISIBILITY (WCAG 2.1 AA) ---------- */
+  a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
+    outline:2px solid var(--terra-text);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+  /* on dark teal sections, use a light focus ring for contrast */
+  .principles a:focus-visible,.principles button:focus-visible,
+  .closer a:focus-visible,.closer button:focus-visible{
+    outline-color:var(--ochre);
+  }
+
+  /* ---------- REDUCED MOTION ---------- */
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{
+      animation-duration:.001ms !important;
+      animation-iteration-count:1 !important;
+      transition-duration:.001ms !important;
+      scroll-behavior:auto !important;
+    }
+    .ring-spin,.interior-halo,.float1,.float2,.float3,.float4{animation:none !important;}
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:0 40px;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  section{position:relative;}
+
+  /* ---------- NAV ---------- */
+  header{position:sticky;top:0;z-index:50;background:rgba(244,240,232,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px;}
+  .brand{display:flex;align-items:center;gap:13px;text-decoration:none;}
+  .mark{width:34px;height:34px;flex:none;}
+  .mark svg{width:100%;height:100%;display:block;}
+  .bn{font-family:'Newsreader',serif;font-size:20px;line-height:1;font-weight:500;color:var(--ink);}
+  .bs{font-size:8px;letter-spacing:.3em;margin-top:4px;color:var(--terra-text);}
+  .navlinks{display:flex;align-items:center;gap:34px;}
+  .navlinks a{font-size:12.5px;letter-spacing:.04em;color:var(--ink-soft);text-decoration:none;transition:color .2s;}
+  .navlinks a:hover{color:var(--ink);}
+  .cta{background:var(--terra-btn);color:var(--paper)!important;border:none;padding:11px 22px;font-family:'Space Grotesk';font-weight:600;font-size:12.5px;border-radius:3px;cursor:pointer;text-decoration:none;letter-spacing:.02em;transition:background .2s;}
+  .cta:hover{background:#8f3d24;}
+  .menu-btn{display:none;background:none;border:1px solid var(--ink);border-radius:3px;padding:8px 12px;font-family:'JetBrains Mono';font-size:11px;cursor:pointer;}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:90px 0 80px;}
+  .eyebrow{font-family:'JetBrains Mono';font-size:12px;letter-spacing:.26em;color:var(--terra-text);margin-bottom:30px;}
+  .hero-grid{display:grid;grid-template-columns:1.25fr .85fr;gap:50px;align-items:center;}
+  h1{font-family:'Newsreader',serif;font-weight:400;font-size:66px;line-height:1.02;letter-spacing:-.015em;}
+  .hero .lede{font-size:17px;line-height:1.62;color:var(--ink-soft);margin-top:28px;max-width:440px;}
+  .hero-actions{margin-top:36px;display:flex;gap:14px;align-items:center;}
+  .btn-outline{border:1px solid var(--ink);background:none;color:var(--ink);padding:11px 22px;font-weight:500;font-size:12.5px;border-radius:3px;cursor:pointer;text-decoration:none;font-family:'JetBrains Mono';letter-spacing:.04em;transition:all .2s;}
+  .btn-outline:hover{background:var(--ink);color:var(--paper);}
+
+  /* diagram (animated) */
+  .diagram{position:relative;height:380px;}
+  .diagram svg{width:100%;height:100%;overflow:visible;}
+  .ring-dash{fill:none;stroke:rgba(31,77,71,.28);stroke-width:1;stroke-dasharray:4 6;}
+  .ring-solid{fill:none;stroke:rgba(31,77,71,.55);stroke-width:1;}
+  .ring-spin{transform-origin:center;animation:spin 60s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .pt-t{fill:var(--teal);} .pt-o{fill:var(--ochre);} .pt-s{fill:var(--slate);}
+  .interior{fill:var(--terra);}
+  .interior-halo{fill:rgba(194,94,60,.16);animation:pulse 4s ease-in-out infinite;transform-origin:center;}
+  @keyframes pulse{0%,100%{transform:scale(1);opacity:.6;}50%{transform:scale(1.25);opacity:.25;}}
+  .radial{stroke:rgba(31,77,71,.25);stroke-width:1;stroke-dasharray:2 4;}
+  .figcap{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.16em;fill:var(--slate-text);}
+
+  /* float animation for points */
+  .float1{animation:fl 7s ease-in-out infinite;} .float2{animation:fl 9s ease-in-out infinite reverse;}
+  .float3{animation:fl 11s ease-in-out infinite;} .float4{animation:fl 8s ease-in-out infinite reverse;}
+  @keyframes fl{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+
+  /* ---------- SECTION SHELL ---------- */
+  .sec-label{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.24em;margin-bottom:26px;color:var(--terra-text);}
+  .sec-head{font-family:'Newsreader',serif;font-weight:400;font-size:40px;line-height:1.1;letter-spacing:-.01em;max-width:680px;}
+
+  /* WHY (light) */
+  .why{padding:84px 0;border-top:1px solid var(--line);}
+  .why-body{max-width:760px;font-size:18px;line-height:1.7;color:var(--ink-soft);margin-top:8px;}
+  .why-body strong{color:var(--ink);font-weight:500;}
+  .defn{margin-top:34px;border-left:2px solid var(--terra);padding:6px 0 6px 24px;font-family:'Newsreader',serif;font-style:italic;font-size:20px;line-height:1.5;color:var(--ink);max-width:680px;}
+  .defn span{font-family:'JetBrains Mono';font-style:normal;font-size:11px;letter-spacing:.16em;color:var(--slate-text);display:block;margin-bottom:8px;}
+
+  /* PRINCIPLES (teal punctuation section) */
+  .principles{background:var(--teal);color:var(--paper);padding:90px 0;}
+  .principles .sec-label{color:var(--ochre);}
+  .principles .sec-head{color:var(--paper);}
+  .prin-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:54px;border-top:1px solid var(--line-dk);}
+  .prin{padding:30px 22px 30px 0;border-right:1px solid var(--line-dk);}
+  .prin:last-child{border-right:none;padding-right:0;}
+  .prin-num{font-family:'JetBrains Mono';font-size:11px;color:var(--ochre);letter-spacing:.1em;margin-bottom:18px;}
+  .prin h4{font-family:'Newsreader',serif;font-weight:500;font-size:19px;line-height:1.2;margin-bottom:12px;color:var(--paper);}
+  .prin p{font-size:13px;line-height:1.55;color:rgba(244,240,232,.72);}
+
+  /* ENGAGEMENTS (light) */
+  .engage{padding:88px 0;}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:48px;}
+  .card{border:1px solid var(--line);background:#fff;padding:36px 34px;display:flex;flex-direction:column;transition:border-color .2s, transform .2s;}
+  .card:hover{border-color:var(--terra);transform:translateY(-2px);}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:22px;}
+  .card h3{font-family:'Newsreader',serif;font-weight:500;font-size:26px;line-height:1.15;max-width:75%;}
+  .tag{font-family:'JetBrains Mono';font-size:9px;letter-spacing:.14em;padding:5px 9px;border:1px solid var(--line);border-radius:3px;color:var(--slate-text);white-space:nowrap;}
+  .card .rule{height:1px;background:var(--line);margin:0 0 22px;}
+  .card .desc{font-size:14.5px;line-height:1.6;color:var(--ink-soft);margin-bottom:24px;}
+  .feat{list-style:none;margin-bottom:30px;display:flex;flex-direction:column;gap:11px;}
+  .feat li{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.06em;color:var(--ink);display:flex;align-items:center;gap:11px;}
+  .feat li::before{content:"";width:7px;height:7px;background:var(--teal);flex:none;}
+  .card-btn{margin-top:auto;border:1px solid var(--ink);background:none;color:var(--ink);padding:14px;font-family:'JetBrains Mono';font-size:11.5px;letter-spacing:.08em;cursor:pointer;text-align:center;text-decoration:none;transition:all .2s;}
+  .card-btn:hover{background:var(--ink);color:var(--paper);}
+
+  /* WHAT I BRING (light, with proof points) */
+  .bring{padding:84px 0;border-top:1px solid var(--line);}
+  .bring-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;margin-top:10px;}
+  .bring-intro{font-size:17px;line-height:1.65;color:var(--ink-soft);}
+  .bring-intro strong{color:var(--ink);font-weight:500;}
+  .proofs{display:flex;flex-direction:column;gap:0;}
+  .proof{border-top:1px solid var(--line);padding:26px 0;}
+  .proof:last-child{border-bottom:1px solid var(--line);}
+  .proof-label{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.14em;color:var(--terra-text);margin-bottom:12px;}
+  .proof .stat{font-family:'Newsreader',serif;font-size:30px;line-height:1.1;margin-bottom:8px;color:var(--ink);}
+  .proof .stat b{color:var(--teal);font-weight:600;}
+  .proof p{font-size:14px;line-height:1.55;color:var(--ink-soft);}
+
+  /* CLOSING CTA (teal punctuation) */
+  .closer{background:var(--teal);color:var(--paper);padding:104px 0;text-align:center;position:relative;overflow:hidden;}
+  .closer .ghost{position:absolute;font-family:'Newsreader',serif;font-size:380px;line-height:1;color:rgba(244,240,232,.035);top:50%;left:50%;transform:translate(-50%,-46%);pointer-events:none;font-weight:500;letter-spacing:-.04em;}
+  .closer .sec-label{color:var(--ochre);position:relative;}
+  .closer h2{font-family:'Newsreader',serif;font-weight:400;font-size:54px;line-height:1.05;position:relative;margin-bottom:42px;}
+  .closer-actions{display:flex;gap:16px;justify-content:center;position:relative;flex-wrap:wrap;}
+  .btn-paper{background:var(--terra-btn);color:var(--paper);border:none;padding:15px 30px;font-family:'JetBrains Mono';font-size:12px;letter-spacing:.08em;cursor:pointer;text-decoration:none;transition:background .2s;}
+  .btn-paper:hover{background:#8f3d24;}
+  .btn-ghost{border:1px solid rgba(244,240,232,.5);background:none;color:var(--paper);padding:15px 30px;font-family:'JetBrains Mono';font-size:12px;letter-spacing:.08em;cursor:pointer;text-decoration:none;transition:all .2s;}
+  .btn-ghost:hover{background:rgba(244,240,232,.1);border-color:var(--paper);}
+
+  /* FOOTER (light) */
+  footer{background:var(--paper-2);padding:64px 0 40px;}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;}
+  .foot-brand .mark{width:30px;height:30px;}
+  .foot-tag{font-size:14px;line-height:1.55;color:var(--ink-soft);margin-top:18px;max-width:300px;}
+  .foot-loc{font-family:'JetBrains Mono';font-size:11px;color:var(--slate-text);margin-top:14px;letter-spacing:.04em;}
+  .foot-col h5{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.2em;color:var(--terra-text);margin-bottom:18px;}
+  .foot-col a{display:block;font-size:13.5px;color:var(--ink-soft);text-decoration:none;margin-bottom:12px;transition:color .2s;}
+  .foot-col a:hover{color:var(--ink);}
+  .foot-bottom{margin-top:54px;padding-top:24px;border-top:1px solid var(--line);font-family:'JetBrains Mono';font-size:10.5px;color:var(--slate-text);letter-spacing:.04em;line-height:1.8;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:880px){
+    .wrap{padding:0 24px;}
+    .navlinks{display:none;flex-direction:column;align-items:flex-start;gap:6px;position:absolute;top:74px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);padding:12px 24px 20px;}
+    .navlinks a{display:flex;align-items:center;min-height:44px;width:100%;}
+    .navlinks[data-open="true"]{display:flex;}
+    .menu-btn{display:block;min-height:44px;}
+    .hero{padding:54px 0 50px;}
+    .hero-grid{grid-template-columns:1fr;gap:30px;}
+    h1{font-size:44px;}
+    .diagram{height:300px;order:-1;}
+    .prin-grid{grid-template-columns:1fr 1fr;}
+    .prin{border-right:none;border-bottom:1px solid var(--line-dk);padding:24px 0;}
+    .cards{grid-template-columns:1fr;}
+    .bring-grid{grid-template-columns:1fr;gap:36px;}
+    .sec-head{font-size:30px;}
+    .closer h2{font-size:36px;}
+    .closer .ghost{font-size:220px;}
+    .foot-grid{grid-template-columns:1fr;gap:30px;}
+    .foot-col a{min-height:44px;display:flex;align-items:center;margin-bottom:4px;}
+  }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Open Set Consulting, home">
+      <div class="mark" aria-hidden="true">
+        <svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15.5" fill="none" stroke="#1A1814" stroke-width="1.5"/><circle cx="22" cy="13" r="7" fill="none" stroke="#1F4D47" stroke-width="1" stroke-dasharray="2 2.5"/><circle cx="22" cy="13" r="3.4" fill="#C25E3C"/></svg>
+      </div>
+      <div><div class="bn">Open Set</div><div class="bs mono">CONSULTING</div></div>
+    </a>
+    <nav class="navlinks" id="primary-nav" aria-label="Primary">
+      <a href="#why">Why Open Set</a>
+      <a href="#services">Services</a>
+      <a href="#bring">What I Bring</a>
+      <a class="cta" href="#contact">Book a Call</a>
+    </nav>
+    <button class="menu-btn mono" id="menu-btn" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation menu" onclick="
+      var nav=document.getElementById('primary-nav');
+      var open=this.getAttribute('aria-expanded')==='true';
+      this.setAttribute('aria-expanded', String(!open));
+      this.setAttribute('aria-label', open ? 'Open navigation menu' : 'Close navigation menu');
+      this.textContent = open ? 'MENU' : 'CLOSE';
+      if(open){nav.removeAttribute('data-open');}else{nav.setAttribute('data-open','true');}
+    ">MENU</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">AI ADOPTION · ENGINEERING TRANSFORMATION</div>
+        <h1>Grounded in where you are. Open to where you're going.</h1>
+        <p class="lede">AI adoption starts inside the work your engineers are already doing. I start by seeing that clearly, then build a plan for what to fix and in what order.</p>
+        <div class="hero-actions">
+          <a class="cta" href="#contact">Book a Call</a>
+          <a class="btn-outline" href="#services">SEE_SERVICES()</a>
+        </div>
+      </div>
+      <div class="diagram">
+        <svg viewBox="0 0 400 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of an open set: a central interior point surrounded by concentric open neighborhoods, with scattered boundary points.">
+          <title>Open set diagram</title>
+          <!-- radial axes -->
+          <g>
+            <line class="radial" x1="200" y1="190" x2="200" y2="40"/>
+            <line class="radial" x1="200" y1="190" x2="330" y2="265"/>
+            <line class="radial" x1="200" y1="190" x2="70" y2="265"/>
+          </g>
+          <!-- rings -->
+          <circle class="ring-dash ring-spin" cx="200" cy="190" r="150"/>
+          <circle class="ring-solid" cx="200" cy="190" r="92"/>
+          <circle class="ring-dash" cx="200" cy="190" r="48"/>
+          <!-- interior point -->
+          <circle class="interior-halo" cx="200" cy="190" r="20"/>
+          <circle class="interior" cx="200" cy="190" r="9"/>
+          <!-- boundary / neighborhood points -->
+          <circle class="pt-t float1" cx="200" cy="62" r="5"/>
+          <circle class="pt-o float2" cx="318" cy="118" r="4.5"/>
+          <circle class="pt-t float3" cx="300" cy="280" r="5.5"/>
+          <circle class="pt-o float4" cx="96" cy="278" r="4"/>
+          <circle class="pt-s float2" cx="62" cy="158" r="3.5"/>
+          <circle class="pt-t float1" cx="150" cy="96" r="3.5"/>
+          <text class="figcap" x="40" y="368">FIG.1 — INTERIOR POINT, OPEN NEIGHBORHOOD</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="sec-label">// WHY_OPEN_SET</div>
+    <h2 class="sec-head">AI adoption rarely starts with a strategy deck.</h2>
+    <p class="why-body">It starts inside the work your engineers are already doing: what's working, what's quietly broken, and what's simply not optimal yet. <strong>I start by seeing that clearly</strong>, then turn it into a plan for what to build on, what to fix, and in what order.</p>
+    <div class="defn">
+      <span>DEF. — OPEN SET</span>
+      A space with no fixed boundary, where every point has room to move. Meet you where you are, advise on the path forward, and stay flexible on how we get there.
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section class="principles">
+  <div class="wrap">
+    <div class="sec-label">// GUIDING_PRINCIPLES</div>
+    <h2 class="sec-head">How the work actually goes.</h2>
+    <div class="prin-grid">
+      <div class="prin"><div class="prin-num">01</div><h4>See clearly, then chart the path</h4><p>Start from what's already working, assess honestly where things break down, and turn that into a strategy for what to fix and in what order.</p></div>
+      <div class="prin"><div class="prin-num">02</div><h4>Advise first; build where it counts</h4><p>Lead with strategy and judgment. Where hands-on work is the fastest path, I do it. Where deeper implementation is needed, I bring in trusted partners.</p></div>
+      <div class="prin"><div class="prin-num">03</div><h4>Honest about reality</h4><p>Which initiatives are working and which are theater. You get honest signals, not optimistic projections, even when the answer is "not yet."</p></div>
+      <div class="prin"><div class="prin-num">04</div><h4>Engagements that end, on purpose</h4><p>Every engagement has a clear scope and a finish line. You always know where things stand and what comes next.</p></div>
+      <div class="prin"><div class="prin-num">05</div><h4>Leave the whole team stronger</h4><p>Capability stays with your engineering org, with champions who multiply rather than gatekeep, so the work outlasts the engagement.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENTS -->
+<section class="engage" id="services">
+  <div class="wrap">
+    <div class="sec-label">// ENGAGEMENT_STRUCTURES</div>
+    <h2 class="sec-head">Two ways to work together.</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-top">
+          <h3>AI Activation Pack</h3>
+          <span class="tag">FIXED_SCOPE</span>
+        </div>
+        <div class="rule"></div>
+        <p class="desc">A rapid, clinical audit of existing engineering workflows to identify high-impact AI integration points. Deliverable is a prioritized implementation blueprint.</p>
+        <ul class="feat">
+          <li>WORKFLOW DATA COLLECTION</li>
+          <li>TOOLSET COMPATIBILITY AUDIT</li>
+          <li>PRIORITIZED IMPLEMENTATION BLUEPRINT</li>
+        </ul>
+        <a class="card-btn" href="#contact">DETAILS_AND_PRICING()</a>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <h3>Technical Program Leadership</h3>
+          <span class="tag">ADVISORY</span>
+        </div>
+        <div class="rule"></div>
+        <p class="desc">Fractional or interim leadership for complex engineering transformations. Bridging the gap between executive strategy and developer reality.</p>
+        <ul class="feat">
+          <li>ARCHITECTURAL OVERSIGHT</li>
+          <li>STAKEHOLDER ALIGNMENT</li>
+          <li>ORGANIZATIONAL DESIGN</li>
+        </ul>
+        <a class="card-btn" href="#contact">SCHEDULE_A_CALL()</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I BRING -->
+<section class="bring" id="bring">
+  <div class="wrap">
+    <div class="sec-label">// WHAT_I_BRING</div>
+    <div class="bring-grid">
+      <div>
+        <h2 class="sec-head" style="font-size:34px;">Over a decade from the codebase to the boardroom.</h2>
+        <p class="bring-intro" style="margin-top:24px;">Two threads stay consistent: the intersection of <strong>product and engineering</strong>, where the operating model meets the code and the business is waiting on results; and <strong>fluency from the codebase to the boardroom</strong>, holding deep technical context with engineers while briefing executives on the same problem.</p>
+        <p class="bring-intro" style="margin-top:20px;">AI compresses the groundwork that used to take weeks. What it can't do is judge which of your initiatives are real, read your organization, or carry adoption past the pilot. Experienced, honest judgment is still necessary, and still human.</p>
+      </div>
+      <div class="proofs">
+        <div class="proof">
+          <div class="proof-label">PLATFORM OBSERVABILITY · FORTUNE 100 FSI</div>
+          <div class="stat">30 min → <b>3 sec</b></div>
+          <p>Named platform health the org's #1 problem, then delivered the observability suite that let teams track system metrics and make informed architecture calls. Instrumented 29 services and dropped business-metric time-to-realization from 30 minutes to 3 seconds.</p>
+        </div>
+        <div class="proof">
+          <div class="proof-label">AI PRACTICE ROLLOUT · ENGINEERING CONSULTANCY</div>
+          <div class="stat"><b>~1 hr</b> recovered per hour invested</div>
+          <p>Built the firm's AI practice and drove adoption across engineering with the guardrails that made it hold. By year-end every engineer felt confident reaching for new AI tools, and teams recovered roughly an hour of capacity for every hour put into AI-assisted work.</p>
+        </div>
+        <div class="proof">
+          <div class="proof-label">THE COMPOUNDING CASE</div>
+          <div class="stat">~<b>$250K</b> / year, recovered</div>
+          <p>Unlocking 10 AI-powered engineers is worth roughly $250K a year in recovered capacity. It compounds: that value returns year after year, and the capability stays with your team.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSER -->
+<section class="closer" id="contact">
+  <div class="ghost" aria-hidden="true">∂</div>
+  <div class="wrap">
+    <div class="sec-label">// READY_STATE</div>
+    <h2>Ready to see clearly?</h2>
+    <div class="closer-actions">
+      <a class="btn-paper" href="#">SCHEDULE A STRATEGY SESSION</a>
+      <a class="btn-ghost" href="#why">LEARN HOW I WORK</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top" style="text-decoration:none;" aria-label="Open Set Consulting, home">
+          <div class="mark" aria-hidden="true"></div>
+          <div><div class="bn">Open Set</div><div class="bs mono">CONSULTING</div></div>
+        </a>
+        <p class="foot-tag">AI that fits your business, not the other way around.</p>
+        <p class="foot-loc">RICHMOND, VIRGINIA</p>
+      </div>
+      <div class="foot-col">
+        <h5>NAVIGATE</h5>
+        <a href="#why">Why Open Set</a>
+        <a href="#services">Services</a>
+        <a href="#bring">What I Bring</a>
+        <a href="#contact">Book a Call</a>
+      </div>
+      <div class="foot-col">
+        <h5>CONNECT</h5>
+        <a href="#">LinkedIn</a>
+        <a href="#">Email</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="foot-bottom mono">
+      © 2026 OPEN SET CONSULTING. ALL RIGHTS RESERVED.<br>
+      OPEN SET CONSULTING IS A BRAND OF OPEN SET, LLC. · GROUNDED IN RICHMOND, VA.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
