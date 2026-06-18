@@ -1,0 +1,10 @@
+{
+  "name": "opensetconsulting.com",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Open Set Consulting marketing site (static HTML/CSS/JS).",
+  "scripts": {
+    "dev": "python3 -m http.server 8765",
+    "test": "node --test"
+  }
+}
