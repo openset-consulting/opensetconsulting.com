@@ -1,57 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thanks — Open Set Consulting</title>
-  <meta name="description" content="Thanks for reaching out. I'll respond within one business day.">
-  <meta name="author" content="Erin Geoghan">
-  <meta name="theme-color" content="#1F4D47">
-  <meta name="robots" content="noindex">
-  <link rel="canonical" href="https://opensetconsulting.com/thanks.html">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thanks — Open Set Consulting</title>
+<meta name="description" content="Thanks for reaching out. I'll respond within one business day." />
+<meta name="author" content="Erin Geoghan" />
+<meta name="theme-color" content="#F4F1EA" />
+<meta name="robots" content="noindex" />
+<link rel="canonical" href="https://opensetconsulting.com/thanks.html" />
 
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Open Set Consulting">
-  <meta property="og:title" content="Thanks — Open Set Consulting">
-  <meta property="og:description" content="Thanks for reaching out. I'll respond within one business day.">
-  <meta property="og:image" content="https://opensetconsulting.com/og-image.png">
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Open Set Consulting" />
+<meta property="og:title" content="Thanks — Open Set Consulting" />
+<meta property="og:description" content="Thanks for reaching out. I'll respond within one business day." />
+<meta property="og:image" content="https://opensetconsulting.com/og-image.png" />
 
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="apple-touch-icon" href="/og-image.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="apple-touch-icon" href="og-image.png" />
 
-  <link rel="stylesheet" href="/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --paper:#F4F1EA; --paper-2:#ECE7DB; --ink:#221F18; --ink-soft:#5A5341;
+    --espresso:#15130F; --teal:#1F4D47; --terracotta:#C0613F; --terracotta-ink:#AC4A2A;
+    --ochre-lt:#DDB35E; --line:#D8D1C2; --line-dark:#332F25;
+    --display:"Fraunces",Georgia,serif; --mono:"Space Mono",ui-monospace,monospace;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--display); font-optical-sizing: auto; font-size: 19px; line-height: 1.62; -webkit-font-smoothing: antialiased; display: flex; flex-direction: column; min-height: 100vh; }
+  ::selection { background: var(--terracotta); color: var(--paper); }
+  a { color: inherit; }
+  svg { display: block; max-width: 100%; }
+  .wrap { width: 100%; max-width: 720px; margin: 0 auto; padding: 0 clamp(22px, 5vw, 40px); }
+
+  .mast { padding: 26px 0; }
+  .wordmark { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
+  .wordmark .mk { width: 22px; height: 22px; }
+  .wordmark b { font-family: var(--display); font-weight: 600; font-size: 17px; letter-spacing: -0.01em; }
+  .wordmark i { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+
+  .doc { flex: 1; padding: clamp(48px, 11vh, 130px) 0 clamp(56px, 9vh, 110px); }
+  .kicker { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta-ink); display: inline-flex; align-items: center; gap: 12px; }
+  .kicker::before { content: ""; width: 26px; height: 1px; background: currentColor; opacity: .7; }
+  h1 { font-family: var(--display); font-weight: 500; font-size: clamp(36px, 6vw, 60px); line-height: 1.02; letter-spacing: -0.025em; margin: 20px 0 0; max-width: 16ch; }
+  .lede { font-size: clamp(18px, 2vw, 21px); line-height: 1.55; color: var(--ink-soft); margin: 24px 0 0; max-width: 54ch; }
+  .lede a, .doc p a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
+  h2 { font-family: var(--display); font-weight: 600; font-size: clamp(21px, 3vw, 26px); letter-spacing: -0.01em; margin: 48px 0 12px; }
+  .doc p { font-size: 17px; line-height: 1.7; color: var(--ink-soft); margin: 0 0 16px; max-width: 60ch; }
+  .back { display: inline-block; margin-top: 48px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 4px; transition: border-color .2s; }
+  .back:hover { border-color: var(--ink); }
+
+  footer { background: var(--espresso); color: var(--paper); padding: clamp(40px, 7vh, 64px) 0 36px; }
+  .foot-top { display: flex; justify-content: space-between; gap: 32px; flex-wrap: wrap; align-items: flex-start; }
+  .foot-brand b { font-family: var(--display); font-weight: 600; font-size: 20px; }
+  .foot-tag { font-family: var(--display); font-style: italic; font-size: 18px; color: color-mix(in srgb, var(--paper) 82%, var(--espresso)); max-width: 26ch; margin: 14px 0 0; line-height: 1.4; }
+  .foot-loc { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ochre-lt); margin-top: 16px; }
+  .foot-links { display: flex; gap: 20px; flex-wrap: wrap; }
+  .foot-links a { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: color-mix(in srgb, var(--paper) 82%, var(--espresso)); text-decoration: none; transition: color .2s; }
+  .foot-links a:hover { color: var(--ochre-lt); }
+  .foot-bottom { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; color: color-mix(in srgb, var(--paper) 50%, var(--espresso)); line-height: 1.8; margin-top: 38px; padding-top: 20px; border-top: 1px solid var(--line-dark); }
+</style>
 </head>
 <body>
 
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="/" aria-label="Open Set Consulting, home">
-      <div class="mark" aria-hidden="true">
-        <svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15.5" fill="none" stroke="#1A1814" stroke-width="1.5"/><circle cx="22" cy="13" r="7" fill="none" stroke="#1F4D47" stroke-width="1" stroke-dasharray="2 2.5"/><circle cx="22" cy="13" r="3.4" fill="#C25E3C"/></svg>
-      </div>
-      <div><div class="bn">Open Set</div><div class="bs mono">CONSULTING</div></div>
+<div class="mast">
+  <div class="wrap">
+    <a class="wordmark" href="/" aria-label="Open Set Consulting, home">
+      <svg class="mk" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M20 3.5C29 3.5 36.5 10.5 36.5 20C36.5 29.5 29 36.5 20 36.5C11 36.5 3.5 29.5 3.5 20C3.5 10.5 11 3.5 20 3.5Z" stroke="#221F18" stroke-width="1.5" stroke-dasharray="2.4 3"/>
+        <circle cx="17.5" cy="21" r="7.5" stroke="#C2912F" stroke-width="1.4" stroke-dasharray="1.8 2.6"/>
+        <circle cx="17.5" cy="21" r="2.1" fill="#C0613F"/>
+      </svg>
+      <span><b>Open Set</b> <i>Consulting</i></span>
     </a>
   </div>
-</header>
+</div>
 
-<section class="page">
+<main class="doc">
   <div class="wrap">
-    <p class="meta">// MESSAGE_RECEIVED</p>
-    <h1>Thanks — your message landed.</h1>
-    <p class="lede">I read every inquiry personally and aim to respond within one business day. If it's urgent, you can also reach me at <a href="mailto:erin@opensetconsulting.com" style="color:var(--terra-text);">erin@opensetconsulting.com</a>.</p>
+    <span class="kicker">Message received</span>
+    <h1>Thanks, your message landed.</h1>
+    <p class="lede">I read every note personally and aim to reply within one business day. If it's urgent, reach me directly at <a href="mailto:erin@opensetconsulting.com">erin@opensetconsulting.com</a>.</p>
 
     <h2>What happens next</h2>
-    <p>I'll review your note, then reply with either a few clarifying questions or a couple of times that work for an intro call. If we agree there's a fit, we'll talk through scope, timing, and price in plain terms — no decks, no fluff.</p>
+    <p>I'll read what you sent, then come back with a couple of clarifying questions or a few times that work for an intro call. If there's a fit, we'll talk through scope, timing, and price in plain terms. No decks, no fluff.</p>
 
-    <a class="back-link" href="/">← BACK TO HOME</a>
+    <a class="back" href="/">← Back to home</a>
   </div>
-</section>
+</main>
 
 <footer>
   <div class="wrap">
-    <div class="foot-bottom mono">
-      © 2026 OPEN SET CONSULTING. ALL RIGHTS RESERVED.<br>
-      OPEN SET CONSULTING IS A BRAND OF OPEN SET, LLC. · GROUNDED IN RICHMOND, VA.
+    <div class="foot-top">
+      <div class="foot-brand">
+        <b>Open Set Consulting</b>
+        <p class="foot-tag">Grounded in where you are. Open to where you're going.</p>
+        <p class="foot-loc">Richmond, Virginia</p>
+      </div>
+      <div class="foot-links">
+        <a href="https://www.linkedin.com/in/eringeoghan/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="mailto:erin@opensetconsulting.com">Email</a>
+        <a href="https://calendar.app.google/6GFwQByUaJ4S3Rk66" target="_blank" rel="noopener">Book a call</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      © 2026 Open Set Consulting. All rights reserved.<br>
+      Open Set Consulting is a brand of Open Set, LLC.
     </div>
   </div>
 </footer>
