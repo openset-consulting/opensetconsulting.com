@@ -29,8 +29,8 @@
 <meta name="twitter:image:alt" content="Open Set Consulting — definition and delivery, aligned." />
 
 <!-- Favicons -->
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="apple-touch-icon" href="/og-image.png" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="apple-touch-icon" href="og-image.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -248,6 +248,14 @@
   .recog .turn { font-size: clamp(20px, 2.5vw, 28px); line-height: 1.45; font-style: normal; color: var(--ink); margin: 40px 0 0; max-width: 40ch; }
   .recog .turn b { color: var(--teal); font-weight: 600; }
 
+  /* what grows / antidote */
+  .grows .grow-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 3vw, 44px); }
+  .grow { padding-top: 22px; border-top: 2px solid var(--ochre); }
+  .grow-ico { width: 56px; height: 56px; margin-bottom: 18px; }
+  .grow h3 { font-family: var(--display); font-weight: 600; font-size: clamp(19px, 2vw, 22px); line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 10px; color: var(--ink); }
+  .grow p { margin: 0; font-size: 15.5px; line-height: 1.55; color: var(--ink-soft); }
+  @media (max-width: 760px) { .grows .grow-cards { grid-template-columns: 1fr; gap: 32px; } }
+
   .dark { background: var(--espresso-2); color: var(--paper); }
   .dark .side-l { color: var(--ochre-lt); }
   .dark .side-l::before { background: var(--ochre); }
@@ -266,6 +274,9 @@
   .about-grid { display: grid; grid-template-columns: 320px minmax(0,1fr); gap: clamp(34px, 6vw, 84px); align-items: start; }
   .about-media { position: sticky; top: 104px; }
   .about-photo { width: 100%; max-width: 320px; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 20%; border-radius: 3px; filter: grayscale(14%) contrast(1.02); }
+  .about-mark { margin: 0; padding: 24px 22px 18px; border: 1px solid var(--line); border-radius: 3px; background: color-mix(in srgb, var(--paper) 60%, transparent); }
+  .about-mark svg { width: 100%; max-width: 300px; margin: 0 auto; display: block; }
+  .about-mark figcaption { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); text-align: center; margin-top: 16px; }
   .ledger { margin-top: 26px; border-top: 1px solid var(--line); }
   .ledger div { display: flex; justify-content: space-between; gap: 16px; font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.03em; padding: 11px 0; border-bottom: 1px solid var(--line); color: var(--ink-soft); }
   .ledger div b { color: var(--ink); font-weight: 700; }
@@ -366,16 +377,16 @@
 
     <div class="cover-grid">
       <div class="c-head" data-reveal style="transition-delay:.05s">
-        <span class="role">Independent consulting for technology &amp; product leaders</span>
+        <span class="role">Independent consulting for technology, product, &amp; business leaders</span>
         <h1 class="cover-h">I make <span class="u">stalled work<svg class="u-line" viewBox="0 0 300 16" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 11 C 52 4, 96 13, 150 8 C 206 3, 250 13, 296 7"/></svg></span> move again.</h1>
       </div>
 
       <figure class="c-portrait" data-reveal style="transition-delay:.12s">
-        <div class="ph"><img src="/erin-geoghan.jpg" alt="Erin Geoghan, founder of Open Set Consulting" width="640" height="800" /></div>
+        <div class="ph"><img src="erin-geoghan.jpg" alt="Erin Geoghan, founder of Open Set Consulting" width="640" height="800" /></div>
         <figcaption><b>Erin Geoghan</b><span>Founder · Open Set Consulting</span></figcaption>
       </figure>
 
-      <p class="c-sub" data-reveal style="transition-delay:.2s">I help technology and product leaders turn fuzzy, stalling work, and AI that isn't paying off, into delivery they can count on.</p>
+      <p class="c-sub" data-reveal style="transition-delay:.2s">I help business leaders turn fuzzy, stalling work, and AI that isn't paying off, into delivery they can count on.</p>
 
       <div class="c-cta" data-reveal style="transition-delay:.28s">
         <a class="btn" data-magnetic href="https://calendar.app.google/6GFwQByUaJ4S3Rk66" target="_blank" rel="noopener">Book a 30-minute call <span class="arr">↗</span></a>
@@ -383,8 +394,8 @@
       </div>
 
       <ul class="c-proof" data-reveal style="transition-delay:.34s">
-        <li><b>A decade</b> building cloud products in regulated industries, from payments to healthcare to travel</li>
-        <li><b>+30%</b> delivery throughput from AI adoption built to last</li>
+        <li><b>A decade</b> building cloud-native products within regulated industry</li>
+        <li><b>30%</b> delivery throughput improvement from AI adoption built to last</li>
         <li><b>Known</b> for asking the question everyone was circling</li>
       </ul>
     </div>
@@ -406,57 +417,80 @@
   </div>
 </section>
 
+<!-- WHAT GROWS / ANTIDOTE -->
+<section class="sec alt grows">
+  <div class="wrap side">
+    <div class="side-l">What grows<br>when we<br>work together</div>
+    <div class="grow-cards">
+      <article class="grow" data-reveal>
+        <svg class="grow-ico" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <line x1="11" y1="20" x2="47" y2="32" stroke="#B8AF9B" stroke-width="1.4" stroke-dasharray="2 3"/>
+          <line x1="13" y1="32" x2="47" y2="32" stroke="#B8AF9B" stroke-width="1.4" stroke-dasharray="2 3"/>
+          <line x1="11" y1="44" x2="47" y2="32" stroke="#B8AF9B" stroke-width="1.4" stroke-dasharray="2 3"/>
+          <circle cx="11" cy="20" r="2.6" fill="none" stroke="#1F4D47" stroke-width="1.5"/>
+          <circle cx="13" cy="32" r="2.6" fill="none" stroke="#1F4D47" stroke-width="1.5"/>
+          <circle cx="11" cy="44" r="2.6" fill="none" stroke="#1F4D47" stroke-width="1.5"/>
+          <circle cx="49" cy="32" r="5.2" fill="#C0613F"/>
+        </svg>
+        <h3>Outcomes that business can feel</h3>
+        <p>Strategy and delivery aligned to one definition, so team effort lands as results, not activity.</p>
+      </article>
+      <article class="grow" data-reveal style="transition-delay:.08s">
+        <svg class="grow-ico" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <line x1="10" y1="50" x2="54" y2="50" stroke="#B8AF9B" stroke-width="1.4"/>
+          <polyline points="12,45 24,40 37,29 50,16" fill="none" stroke="#1F4D47" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="24" cy="40" r="2" fill="#C2912F"/>
+          <circle cx="37" cy="29" r="2" fill="#C2912F"/>
+          <circle cx="50" cy="16" r="5" fill="#C0613F"/>
+        </svg>
+        <h3>AI that earns its place</h3>
+        <p>Safety, velocity, and durability: implementation rigor that ties AI spend to real business value.</p>
+      </article>
+      <article class="grow" data-reveal style="transition-delay:.16s">
+        <svg class="grow-ico" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path d="M26 50 A12 12 0 0 0 14 38" fill="none" stroke="#1F4D47" stroke-width="1.5"/>
+          <path d="M38 50 A24 24 0 0 0 14 26" fill="none" stroke="#9FAFA9" stroke-width="1.4"/>
+          <path d="M50 50 A36 36 0 0 0 14 14" fill="none" stroke="#C9C0AE" stroke-width="1.3" stroke-dasharray="3 4"/>
+          <circle cx="14" cy="50" r="2.6" fill="#1F4D47"/>
+          <circle cx="31" cy="33" r="3.8" fill="#C0613F"/>
+        </svg>
+        <h3>Delivery &amp; risk that are visible</h3>
+        <p>Operating rhythms that surface risk early and reduce rework.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- OPEN SET / DARK -->
 <section class="sec dark">
   <div class="wrap side">
     <div class="side-l">What<br>"open set"<br>means</div>
     <div>
       <p class="os-statement" data-reveal>An open set has no fixed boundary. Every point inside it has <em>room to move</em>.</p>
-      <p class="os-body" data-reveal>It's a mathematician's idea, and it's how I actually work. I don't arrive with a fixed playbook to install on top of you. I start at the interior point, where you really are, then find the open neighborhood: the room you have to move, and the shortest honest path through it.</p>
+      <p class="os-body" data-reveal>No lengthy discovery process. No generic framework handed over and left to you. Here is how the work actually moves.</p>
 
       <div class="holds" data-reveal>
         <div class="hold">
-          <div class="n">i.</div>
+          <div class="n">01</div>
           <div>
-            <h3>Definition that holds</h3>
-            <p>Everyone building the same thing, for the same reason, captured clearly enough to survive the handoffs where intent usually leaks out.</p>
+            <h3>Start with a real conversation</h3>
+            <p>Schedule a free 30-minute consultation. We talk through what's actually happening in your delivery system: where intent breaks down, where risk hides, and where AI investment is sitting idle. No pitch. An honest assessment.</p>
           </div>
         </div>
         <div class="hold">
-          <div class="n">ii.</div>
+          <div class="n">02</div>
           <div>
-            <h3>AI that earns its place</h3>
-            <p>Standards, honest pilots, and real measurement, so AI spend turns into outcomes you can point to instead of activity you have to defend.</p>
+            <h3>Receive a clear, prioritized plan</h3>
+            <p>Based on where your team actually is, you get a specific roadmap: the highest-leverage structural changes, the KPIs worth tracking, and an honest read on where to invest, where to simplify, and where to stop.</p>
           </div>
         </div>
         <div class="hold">
-          <div class="n">iii.</div>
+          <div class="n">03</div>
           <div>
-            <h3>Risk you can see coming</h3>
-            <p>Operating rhythms that surface trouble while there's still time to act on it, not at the deadline when the only option left is heroics.</p>
+            <h3>Build systems that hold up</h3>
+            <p>The goal is delivery infrastructure your team keeps using after the engagement ends. Faster throughput, predictable outcomes, and AI adoption that survives past the pilot and ties back to business value.</p>
           </div>
         </div>
-      </div>
-
-      <div class="os-fig" data-reveal>
-        <svg viewBox="0 0 400 380" fill="none" role="img" aria-label="Open set diagram: an interior point surrounded by open neighborhoods, with scattered boundary points.">
-          <title>Open set diagram</title>
-          <line x1="200" y1="190" x2="200" y2="48" stroke="#4A4538" stroke-width="1" stroke-dasharray="2 4"/>
-          <line x1="200" y1="190" x2="332" y2="264" stroke="#4A4538" stroke-width="1" stroke-dasharray="2 4"/>
-          <line x1="200" y1="190" x2="68" y2="264" stroke="#4A4538" stroke-width="1" stroke-dasharray="2 4"/>
-          <circle class="os-spin" cx="200" cy="190" r="150" fill="none" stroke="#544E40" stroke-width="1.1" stroke-dasharray="3 7"/>
-          <circle cx="200" cy="190" r="92" fill="none" stroke="#C2912F" stroke-width="1.2"/>
-          <circle cx="200" cy="190" r="48" fill="none" stroke="#544E40" stroke-width="1.1" stroke-dasharray="3 5"/>
-          <circle cx="200" cy="190" r="20" fill="#C0613F" opacity="0.22"/>
-          <circle cx="200" cy="190" r="9" fill="#C0613F"/>
-          <circle cx="200" cy="62" r="5" fill="#DDB35E"/>
-          <circle cx="318" cy="118" r="4.5" fill="#E7E0D2"/>
-          <circle cx="300" cy="280" r="5.5" fill="#DDB35E"/>
-          <circle cx="96" cy="278" r="4" fill="#E7E0D2"/>
-          <circle cx="62" cy="158" r="3.5" fill="#928B79"/>
-          <circle cx="150" cy="96" r="3.5" fill="#DDB35E"/>
-        </svg>
-        <p class="cap">Fig.1 — interior point, open neighborhood</p>
       </div>
     </div>
   </div>
@@ -471,22 +505,41 @@
     </div>
     <div class="about-grid">
       <div class="about-media">
-        <img class="about-photo" src="/erin-geoghan.jpg" alt="Erin Geoghan, founder of Open Set Consulting" width="320" height="320" />
+        <figure class="about-mark">
+          <svg viewBox="0 0 400 380" fill="none" role="img" aria-label="Open set diagram: an interior point surrounded by open neighborhoods, with scattered boundary points.">
+            <title>Open set diagram</title>
+            <line x1="200" y1="190" x2="200" y2="48" stroke="#9A917D" stroke-width="1" stroke-dasharray="2 4"/>
+            <line x1="200" y1="190" x2="332" y2="264" stroke="#9A917D" stroke-width="1" stroke-dasharray="2 4"/>
+            <line x1="200" y1="190" x2="68" y2="264" stroke="#9A917D" stroke-width="1" stroke-dasharray="2 4"/>
+            <circle class="os-spin" cx="200" cy="190" r="150" fill="none" stroke="#B8AF9B" stroke-width="1.2" stroke-dasharray="3 7"/>
+            <circle cx="200" cy="190" r="92" fill="none" stroke="#5C7B76" stroke-width="1.3"/>
+            <circle cx="200" cy="190" r="48" fill="none" stroke="#B8AF9B" stroke-width="1.2" stroke-dasharray="3 5"/>
+            <circle cx="200" cy="190" r="20" fill="#C0613F" opacity="0.16"/>
+            <circle cx="200" cy="190" r="9" fill="#C0613F"/>
+            <circle cx="200" cy="62" r="5" fill="#1F4D47"/>
+            <circle cx="318" cy="118" r="4.5" fill="#C2912F"/>
+            <circle cx="300" cy="280" r="5.5" fill="#163833"/>
+            <circle cx="96" cy="278" r="4" fill="#C2912F"/>
+            <circle cx="62" cy="158" r="3.5" fill="#5A5341"/>
+            <circle cx="150" cy="96" r="3.5" fill="#1F4D47"/>
+          </svg>
+          <figcaption>Fig.1 — interior point, open neighborhood</figcaption>
+        </figure>
         <div class="ledger">
           <div><span>Enterprise delivery</span><b>10+ yrs</b></div>
-          <div><span>Throughput lift, AI program</span><b>+30%</b></div>
+          <div><span>Throughput lift, AI program</span><b>~30%</b></div>
           <div><span>On-time across programs</span><b>90%+</b></div>
-          <div><span>Bank account, 12 months</span><b>2&times;</b></div>
+          <div><span>Key client account, 12 months</span><b>2&times;</b></div>
           <div class="full">Agile on the Beach · JConf.dev · Devnexus</div>
         </div>
       </div>
       <div class="about-text" data-reveal>
         <h2>I studied <em>mathematics</em> before I ever ran a delivery.</h2>
-        <p>That's not a fun fact, it's how I see the work. Find where you actually are, then find the room you have to move. I spent more than a decade proving that out in places where vague transformation gets you nowhere: a top-10 U.S. bank, a global payments company, large healthcare and insurance organizations.</p>
-        <p>At Ippon Technologies I grew from software engineer to <b>Director of AI Adoption and Technical Program Leadership</b>, reporting to the CTO. I built the AI adoption program for a 30-plus person engineering org from the ground up. I evaluated the tooling, ran the pilots, wrote the guardrails that kept it sane, trained the teams, and turned all of it into a framework other engagements still use. It lifted delivery throughput by 30%.</p>
-        <p>Alongside that I ran the program work that keeps complex delivery from falling apart: up to eight concurrent workstreams, around 20 engineers, better than 90% on-time. I designed the structure for a bank engagement that doubled in twelve months, and built the onboarding that got new teams productive about 25% faster.</p>
-        <p>I care most about work that survives past the pilot, the kind a team keeps using long after I'm gone.</p>
-        <p class="last">What clients remember isn't the org chart. It's that I ask the question everyone was circling, and name the thing in the room no one had said yet.</p>
+        <p>Not that I find much interest in what degree I chose or what degree anyone holds for that matter. But I mention this because I studied math for its beauty in simplicity and the ability to model real-world systems and while I have changed a lot in the last 15 years, that love for logic still exists. Find where you actually are, then find the room you have to move. I spent more than a decade proving that out in places where vague transformation gets you nowhere: a top-10 U.S. bank, a global payments company, large healthcare and insurance organizations.</p>
+        <p>At Ippon Technologies I grew from software engineer to <b>Head of AI Product and Architecture</b>. I led our AI adoption program for a 30-plus person engineering org. With my amazing team we evaluated the tooling, ran the pilots, configured guardrails and wrestled with pricing, trained consultants and clients, and turned all of it into a framework other engagements still use. It lifted delivery throughput by 30%.</p>
+        <p>On many occasions I dove into the weeds and helped prevent complex delivery from falling apart: up to eight concurrent workstreams, around 20 engineers, better than 90% on-time delivery. I led the design of a key account's structure and saw it double in revenue within twelve months, and advised on a new onboarding process that brought new consultants productive about 25% faster (that one is pre-AI productivity).</p>
+        <p>I care most about creating solutions that survive past a pilot or MVP build, solutions that a team or customers continue to iterate on and create with on their own. For me, iteration on a process or product is the only important indicator that it still has life.</p>
+        <p class="last">The best thinking is usually already in the room, in pieces. My job is helping it surface, stitch it together, and build something that lasts.</p>
       </div>
     </div>
   </div>
@@ -563,7 +616,7 @@
         <div data-netlify-recaptcha="true"></div>
       </div>
       <button class="btn" data-magnetic type="submit">Send it over <span class="arr">→</span></button>
-      <p class="fine">By submitting, you agree to the <a href="/privacy.html">privacy policy</a>.</p>
+      <p class="fine">By submitting, you agree to the <a href="privacy.html">privacy policy</a>.</p>
     </form>
   </div>
 </section>
@@ -581,7 +634,7 @@
         <a href="https://www.linkedin.com/in/eringeoghan/" target="_blank" rel="noopener">LinkedIn ↗</a>
         <a href="mailto:erin@opensetconsulting.com">Email</a>
         <a href="https://calendar.app.google/6GFwQByUaJ4S3Rk66" target="_blank" rel="noopener">Book a call</a>
-        <a href="/privacy.html">Privacy</a>
+        <a href="privacy.html">Privacy</a>
       </div>
     </div>
     <div class="foot-bottom">

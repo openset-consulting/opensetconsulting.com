@@ -1,0 +1,76 @@
+// Integrity tests for the static site. Zero dependencies: run with `npm test`.
+// These guard the things most likely to break silently on a content edit:
+// the Netlify form wiring, local asset paths (file:// + Netlify), structured
+// data, and a few content/regression invariants.
+
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync, existsSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
+
+const root = join(dirname(fileURLToPath(import.meta.url)), '..');
+const read = (f) => readFileSync(join(root, f), 'utf8');
+const html = read('index.html');
+
+test('Netlify contact form is fully wired', () => {
+  assert.match(html, /<form[^>]*\bname="contact"/i, 'form must be name="contact"');
+  assert.match(html, /<form[^>]*method="POST"/i, 'form must POST');
+  assert.match(html, /<form[^>]*action="\/?thanks\.html"/i, 'form action -> thanks page');
+  assert.match(html, /data-netlify="true"/i, 'data-netlify flag');
+  assert.match(html, /data-netlify-honeypot="bot-field"/i, 'honeypot configured');
+  assert.match(html, /name="bot-field"/i, 'honeypot field present');
+  assert.match(
+    html,
+    /<input[^>]*type="hidden"[^>]*name="form-name"[^>]*value="contact"/i,
+    'hidden form-name input (required for Netlify detection)'
+  );
+  assert.match(html, /data-netlify-recaptcha="true"/i, 'reCAPTCHA widget');
+});
+
+test('referenced local assets exist on disk', () => {
+  for (const f of ['erin-geoghan.jpg', 'favicon.svg', 'og-image.png', 'privacy.html', 'thanks.html']) {
+    assert.ok(existsSync(join(root, f)), `missing asset: ${f}`);
+  }
+});
+
+test('local asset paths are relative (work under file:// and when served)', () => {
+  assert.match(html, /src="erin-geoghan\.jpg"/, 'hero photo uses a relative path');
+  assert.doesNotMatch(html, /src="\/erin-geoghan\.jpg"/, 'no root-absolute photo path');
+  assert.match(html, /href="favicon\.svg"/, 'favicon uses a relative path');
+});
+
+test('three JSON-LD blocks present and all valid JSON', () => {
+  const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => m[1]);
+  assert.equal(blocks.length, 3, 'expected 3 structured-data blocks');
+  for (const b of blocks) assert.doesNotThrow(() => JSON.parse(b), 'JSON-LD block must parse');
+});
+
+test('exactly one H1', () => {
+  const count = (html.match(/<h1[\s>]/gi) || []).length;
+  assert.equal(count, 1, 'a page should have exactly one h1');
+});
+
+test('the three outcome cards are present and populated', () => {
+  const cards = [...html.matchAll(/<article class="grow"[\s\S]*?<\/article>/g)].map((m) => m[0]);
+  assert.equal(cards.length, 3, 'expected 3 outcome cards');
+  for (const c of cards) {
+    assert.match(c, /<h3>[\s\S]+?<\/h3>/, 'each card has a heading');
+    assert.match(c, /<p>[\s\S]+?<\/p>/, 'each card has body copy');
+  }
+});
+
+test('hero and contact both link to the booking calendar', () => {
+  const links = (html.match(/calendar\.app\.google\/6GFwQByUaJ4S3Rk66/g) || []).length;
+  assert.ok(links >= 2, 'booking link should appear in hero and contact');
+});
+
+test('no known regressions', () => {
+  assert.doesNotMatch(html, /congifured/i, 'fixed typo must not reappear');
+  assert.doesNotMatch(html, /What leadership decides/i, 'removed leadership line must stay gone');
+});
+
+test('one-pager exists and is branded', () => {
+  assert.ok(existsSync(join(root, 'one-pager.html')), 'one-pager.html should exist');
+  assert.match(read('one-pager.html'), /Open Set/, 'one-pager is branded');
+});

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Open Set Consulting · One-Pager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper:#F4F1EA; --ink:#221F18; --ink-soft:#5A5341; --teal:#1F4D47;
+    --terracotta:#C0613F; --terracotta-ink:#AC4A2A; --ochre:#C2912F; --line:#D8D1C2;
+    --display:"Fraunces",Georgia,serif; --mono:"Space Mono",ui-monospace,monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { background: #cfc9bb; font-family: var(--display); color: var(--ink); -webkit-font-smoothing: antialiased; padding: 28px 0; }
+  ::selection { background: var(--terracotta); color: var(--paper); }
+
+  .sheet {
+    width: 8.5in; min-height: 11in; margin: 0 auto; background: var(--paper);
+    padding: 0.72in 0.78in 0.6in; position: relative; overflow: hidden;
+    box-shadow: 0 24px 60px -28px rgba(0,0,0,.45);
+    display: flex; flex-direction: column;
+  }
+  .mono { font-family: var(--mono); }
+
+  /* masthead */
+  .top { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+  .brand { display: flex; align-items: center; gap: 11px; }
+  .brand svg { width: 30px; height: 30px; }
+  .brand b { font-family: var(--display); font-weight: 600; font-size: 19px; letter-spacing: -0.01em; line-height: 1; display: block; }
+  .brand .sub { font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.28em; color: var(--ink-soft); }
+  .who { text-align: right; font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); line-height: 1.7; }
+  .who b { color: var(--ink); font-weight: 700; }
+
+  .hr { height: 1px; background: var(--line); border: 0; margin: 26px 0 0; }
+
+  /* outcome */
+  .lead-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta-ink); margin: 34px 0 0; display: flex; align-items: center; gap: 11px; }
+  .lead-label::before { content: ""; width: 24px; height: 1px; background: currentColor; }
+  h1 { font-family: var(--display); font-weight: 500; font-size: 46px; line-height: 1.0; letter-spacing: -0.03em; margin: 14px 0 0; max-width: 15ch; }
+  h1 .u { color: var(--terracotta); font-style: italic; }
+  .sub { font-size: 16px; line-height: 1.5; color: var(--ink-soft); margin: 18px 0 0; max-width: 62ch; }
+  .sub b { color: var(--ink); font-weight: 600; }
+
+  /* how */
+  .sec-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta-ink); margin: 0 0 16px; }
+  .how { margin-top: 38px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  .how .step { border-top: 2px solid var(--ochre); padding-top: 14px; }
+  .how .n { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; color: var(--terracotta); }
+  .how h3 { font-family: var(--display); font-weight: 600; font-size: 21px; margin: 6px 0 7px; letter-spacing: -0.01em; }
+  .how p { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--ink-soft); }
+
+  .split { margin-top: 38px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .when ul { list-style: none; margin: 12px 0 0; padding: 0; }
+  .when li { font-size: 15px; line-height: 1.45; color: var(--ink); padding: 9px 0 9px 20px; position: relative; border-bottom: 1px solid var(--line); }
+  .when li::before { content: ""; position: absolute; left: 0; top: 0.95em; width: 6px; height: 6px; border-radius: 50%; background: var(--ochre); }
+  .creds p { font-size: 15px; line-height: 1.55; color: var(--ink); margin: 12px 0 0; }
+  .creds .em { font-family: var(--display); font-style: italic; font-size: 17px; color: var(--ink); line-height: 1.4; }
+
+  /* footer / CTA */
+  .foot { margin-top: auto; padding-top: 26px; border-top: 1px solid var(--line); display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; }
+  .cta b { font-family: var(--display); font-weight: 600; font-size: 19px; }
+  .cta .url { font-family: var(--mono); font-size: 12px; color: var(--terracotta-ink); margin-top: 5px; }
+  .contact { text-align: right; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.04em; color: var(--ink-soft); line-height: 1.85; }
+  .contact a { color: inherit; text-decoration: none; }
+
+  .watermark { position: absolute; right: -90px; top: 150px; width: 360px; opacity: 0.05; pointer-events: none; }
+
+  @media print {
+    @page { size: Letter; margin: 0; }
+    body { background: #fff; padding: 0; }
+    .sheet { box-shadow: none; width: 100%; min-height: 100vh; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- brand watermark -->
+  <svg class="watermark" viewBox="0 0 400 380" fill="none" aria-hidden="true">
+    <circle cx="200" cy="190" r="150" fill="none" stroke="#221F18" stroke-width="1.4" stroke-dasharray="3 7"/>
+    <circle cx="200" cy="190" r="92" fill="none" stroke="#221F18" stroke-width="1.4"/>
+    <circle cx="200" cy="190" r="48" fill="none" stroke="#221F18" stroke-width="1.4" stroke-dasharray="3 5"/>
+    <circle cx="200" cy="190" r="9" fill="#221F18"/>
+  </svg>
+
+  <div class="top">
+    <div class="brand">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M20 3.5C29 3.5 36.5 10.5 36.5 20C36.5 29.5 29 36.5 20 36.5C11 36.5 3.5 29.5 3.5 20C3.5 10.5 11 3.5 20 3.5Z" stroke="#221F18" stroke-width="1.5" stroke-dasharray="2.4 3"/>
+        <circle cx="17.5" cy="21" r="7.5" stroke="#C2912F" stroke-width="1.4" stroke-dasharray="1.8 2.6"/>
+        <circle cx="17.5" cy="21" r="2.1" fill="#C0613F"/>
+      </svg>
+      <span><b>Open Set</b><span class="sub">CONSULTING</span></span>
+    </div>
+    <div class="who"><b>Erin Geoghan</b><br>Founder<br>Richmond, VA</div>
+  </div>
+
+  <hr class="hr" />
+
+  <div class="lead-label">What I do</div>
+  <h1>I make <span class="u">stalled work</span> move again.</h1>
+  <p class="sub">I help technology and product leaders close the gap between what you meant and what gets built, so the right work ships, <b>and holds</b>. Especially when AI is in the mix.</p>
+
+  <div class="how">
+    <div class="step">
+      <div class="n">01</div>
+      <h3>Define</h3>
+      <p>Everyone building the same thing, captured clearly enough to survive the handoffs.</p>
+    </div>
+    <div class="step">
+      <div class="n">02</div>
+      <h3>Align</h3>
+      <p>Leaders and the team behind one prioritized plan.</p>
+    </div>
+    <div class="step">
+      <div class="n">03</div>
+      <h3>Deliver</h3>
+      <p>Rhythms that surface risk early, and AI that earns its place.</p>
+    </div>
+  </div>
+
+  <div class="split">
+    <div class="when">
+      <div class="sec-label">When teams call me</div>
+      <ul>
+        <li>Delivery keeps slipping or surprising you</li>
+        <li>An AI pilot won the demo, then stalled</li>
+        <li>A busy team, but the work keeps missing</li>
+      </ul>
+    </div>
+    <div class="creds">
+      <div class="sec-label">Who I am</div>
+      <p class="em">A decade building cloud products in regulated industries, from payments to healthcare to travel.</p>
+      <p>I assess where a team really is, name what others won't, and build the plan that gets the work moving, and keeps it moving after I'm gone.</p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="cta">
+      <b>Let's talk.</b>
+      <div class="url">calendar.app.google/6GFwQByUaJ4S3Rk66</div>
+    </div>
+    <div class="contact">
+      <a href="mailto:erin@opensetconsulting.com">erin@opensetconsulting.com</a><br>
+      opensetconsulting.com<br>
+      linkedin.com/in/eringeoghan
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
