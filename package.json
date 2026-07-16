@@ -5,6 +5,7 @@
   "description": "Open Set Consulting marketing site (static HTML/CSS/JS).",
   "scripts": {
     "dev": "python3 -m http.server 8765",
-    "test": "node --test"
+    "test": "node --test",
+    "og": "npx playwright screenshot --viewport-size=1200,630 --wait-for-timeout=2500 \"file://$PWD/og-image.html\" og-image.png"
   }
 }

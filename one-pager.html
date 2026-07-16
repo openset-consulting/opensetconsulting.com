@@ -9,17 +9,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --paper:#F4F1EA; --ink:#221F18; --ink-soft:#5A5341; --teal:#1F4D47;
-    --terracotta:#C0613F; --terracotta-ink:#AC4A2A; --ochre:#C2912F; --line:#D8D1C2;
+    --bg:#FFFFFF; --ink:#0F172A; --ink-soft:#475569;
+    --accent:#155E75; --accent-deep:#164E63; --line:#E2E8F0;
     --display:"Fraunces",Georgia,serif; --mono:"Space Mono",ui-monospace,monospace;
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; }
-  body { background: #cfc9bb; font-family: var(--display); color: var(--ink); -webkit-font-smoothing: antialiased; padding: 28px 0; }
-  ::selection { background: var(--terracotta); color: var(--paper); }
+  body { background: #E2E8F0; font-family: var(--display); color: var(--ink); -webkit-font-smoothing: antialiased; padding: 28px 0; }
+  ::selection { background: var(--accent); color: #FFFFFF; }
 
   .sheet {
-    width: 8.5in; min-height: 11in; margin: 0 auto; background: var(--paper);
+    width: 8.5in; min-height: 11in; margin: 0 auto; background: var(--bg);
     padding: 0.72in 0.78in 0.6in; position: relative; overflow: hidden;
     box-shadow: 0 24px 60px -28px rgba(0,0,0,.45);
     display: flex; flex-direction: column;
@@ -38,32 +38,32 @@
   .hr { height: 1px; background: var(--line); border: 0; margin: 26px 0 0; }
 
   /* outcome */
-  .lead-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta-ink); margin: 34px 0 0; display: flex; align-items: center; gap: 11px; }
+  .lead-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-deep); margin: 34px 0 0; display: flex; align-items: center; gap: 11px; }
   .lead-label::before { content: ""; width: 24px; height: 1px; background: currentColor; }
   h1 { font-family: var(--display); font-weight: 500; font-size: 46px; line-height: 1.0; letter-spacing: -0.03em; margin: 14px 0 0; max-width: 15ch; }
-  h1 .u { color: var(--terracotta); font-style: italic; }
+  h1 .u { color: var(--accent); font-style: italic; }
   .sub { font-size: 16px; line-height: 1.5; color: var(--ink-soft); margin: 18px 0 0; max-width: 62ch; }
   .sub b { color: var(--ink); font-weight: 600; }
 
   /* how */
-  .sec-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta-ink); margin: 0 0 16px; }
+  .sec-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-deep); margin: 0 0 16px; }
   .how { margin-top: 38px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
-  .how .step { border-top: 2px solid var(--ochre); padding-top: 14px; }
-  .how .n { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; color: var(--terracotta); }
+  .how .step { border-top: 2px solid var(--accent); padding-top: 14px; }
+  .how .n { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; color: var(--accent); }
   .how h3 { font-family: var(--display); font-weight: 600; font-size: 21px; margin: 6px 0 7px; letter-spacing: -0.01em; }
   .how p { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--ink-soft); }
 
   .split { margin-top: 38px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
   .when ul { list-style: none; margin: 12px 0 0; padding: 0; }
   .when li { font-size: 15px; line-height: 1.45; color: var(--ink); padding: 9px 0 9px 20px; position: relative; border-bottom: 1px solid var(--line); }
-  .when li::before { content: ""; position: absolute; left: 0; top: 0.95em; width: 6px; height: 6px; border-radius: 50%; background: var(--ochre); }
+  .when li::before { content: ""; position: absolute; left: 0; top: 0.95em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
   .creds p { font-size: 15px; line-height: 1.55; color: var(--ink); margin: 12px 0 0; }
   .creds .em { font-family: var(--display); font-style: italic; font-size: 17px; color: var(--ink); line-height: 1.4; }
 
   /* footer / CTA */
   .foot { margin-top: auto; padding-top: 26px; border-top: 1px solid var(--line); display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; }
   .cta b { font-family: var(--display); font-weight: 600; font-size: 19px; }
-  .cta .url { font-family: var(--mono); font-size: 12px; color: var(--terracotta-ink); margin-top: 5px; }
+  .cta .url { font-family: var(--mono); font-size: 12px; color: var(--accent-deep); margin-top: 5px; }
   .contact { text-align: right; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.04em; color: var(--ink-soft); line-height: 1.85; }
   .contact a { color: inherit; text-decoration: none; }
 
@@ -81,18 +81,18 @@
 
   <!-- brand watermark -->
   <svg class="watermark" viewBox="0 0 400 380" fill="none" aria-hidden="true">
-    <circle cx="200" cy="190" r="150" fill="none" stroke="#221F18" stroke-width="1.4" stroke-dasharray="3 7"/>
-    <circle cx="200" cy="190" r="92" fill="none" stroke="#221F18" stroke-width="1.4"/>
-    <circle cx="200" cy="190" r="48" fill="none" stroke="#221F18" stroke-width="1.4" stroke-dasharray="3 5"/>
-    <circle cx="200" cy="190" r="9" fill="#221F18"/>
+    <circle cx="200" cy="190" r="150" fill="none" stroke="#0F172A" stroke-width="1.4" stroke-dasharray="3 7"/>
+    <circle cx="200" cy="190" r="92" fill="none" stroke="#0F172A" stroke-width="1.4"/>
+    <circle cx="200" cy="190" r="48" fill="none" stroke="#0F172A" stroke-width="1.4" stroke-dasharray="3 5"/>
+    <circle cx="200" cy="190" r="9" fill="#0F172A"/>
   </svg>
 
   <div class="top">
     <div class="brand">
       <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <path d="M20 3.5C29 3.5 36.5 10.5 36.5 20C36.5 29.5 29 36.5 20 36.5C11 36.5 3.5 29.5 3.5 20C3.5 10.5 11 3.5 20 3.5Z" stroke="#221F18" stroke-width="1.5" stroke-dasharray="2.4 3"/>
-        <circle cx="17.5" cy="21" r="7.5" stroke="#C2912F" stroke-width="1.4" stroke-dasharray="1.8 2.6"/>
-        <circle cx="17.5" cy="21" r="2.1" fill="#C0613F"/>
+        <path d="M20 3.5C29 3.5 36.5 10.5 36.5 20C36.5 29.5 29 36.5 20 36.5C11 36.5 3.5 29.5 3.5 20C3.5 10.5 11 3.5 20 3.5Z" stroke="#0F172A" stroke-width="1.5" stroke-dasharray="2.4 3"/>
+        <circle cx="17.5" cy="21" r="7.5" stroke="#155E75" stroke-width="1.4" stroke-dasharray="1.8 2.6"/>
+        <circle cx="17.5" cy="21" r="2.1" fill="#155E75"/>
       </svg>
       <span><b>Open Set</b><span class="sub">CONSULTING</span></span>
     </div>

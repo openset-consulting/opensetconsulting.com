@@ -65,9 +65,38 @@ test('hero and contact both link to the booking calendar', () => {
   assert.ok(links >= 2, 'booking link should appear in hero and contact');
 });
 
+// The lead-magnet section is toggled off (commented out) until the downloadable
+// artifact exists. When re-enabling it, restore the wired-form assertions this
+// test had before (name/method/action/data-netlify/honeypot/hidden form-name/email).
+test('lead magnet stays toggled off, with the section preserved for re-enable', () => {
+  const live = html.replace(/<!--[\s\S]*?-->/g, '');
+  assert.doesNotMatch(live, /name="lead-magnet"/i, 'lead-magnet form must not be live yet');
+  assert.doesNotMatch(live, /AI Adoption Scorecard/i, 'lead-magnet section must not render yet');
+  assert.match(html, /name="lead-magnet"/i, 'commented-out lead-magnet section should stay in the file for re-enable');
+});
+
+test('offer band is present', () => {
+  assert.match(html, /One focused thread/i, 'offer lede must appear on the page');
+  assert.match(html, /through your organization/i, 'offer lede close must appear on the page');
+  for (const step of ['Clarity', 'Alignment', 'Momentum']) {
+    assert.match(html, new RegExp(step, 'i'), `offer rail step "${step}" must appear`);
+  }
+  assert.match(html, /Strategy to implementation/i, 'offer close must appear on the page');
+  assert.match(html, /what improved and why/i, 'value close must appear on the page');
+});
+
+test('white palette holds — no tan/terracotta regression', () => {
+  for (const f of ['index.html', 'privacy.html', 'thanks.html', 'one-pager.html', 'og-image.html', 'favicon.svg']) {
+    assert.doesNotMatch(read(f), /F4F1EA|ECE7DB|A8392A|1F4D47|C2912F/i, `${f} must not contain old palette colors`);
+  }
+  assert.match(html, /<meta name="theme-color" content="#FFFFFF"/i, 'theme-color is white');
+});
+
 test('no known regressions', () => {
   assert.doesNotMatch(html, /congifured/i, 'fixed typo must not reappear');
   assert.doesNotMatch(html, /What leadership decides/i, 'removed leadership line must stay gone');
+  assert.doesNotMatch(html, /no fixed boundary/i, 'open-set lore section must stay gone');
+  assert.doesNotMatch(html, /studied mathematics/i, 'math backstory must stay gone');
 });
 
 test('one-pager exists and is branded', () => {
