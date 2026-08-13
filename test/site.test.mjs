@@ -76,12 +76,12 @@ test('lead magnet stays toggled off, with the section preserved for re-enable', 
 });
 
 test('offer band is present', () => {
-  assert.match(html, /One focused thread/i, 'offer lede must appear on the page');
-  assert.match(html, /through your organization/i, 'offer lede close must appear on the page');
+  assert.match(html, /fractional technology advisor/i, 'offer lede must appear on the page');
+  assert.match(html, /better ways of working across your teams/i, 'offer lede close must appear on the page');
   for (const step of ['Clarity', 'Alignment', 'Momentum']) {
     assert.match(html, new RegExp(step, 'i'), `offer rail step "${step}" must appear`);
   }
-  assert.match(html, /Strategy to implementation/i, 'offer close must appear on the page');
+  assert.match(html, /upstream and downstream/i, 'offer close must appear on the page');
   assert.match(html, /what improved and why/i, 'value close must appear on the page');
 });
 
