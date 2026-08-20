@@ -75,14 +75,27 @@ test('lead magnet stays toggled off, with the section preserved for re-enable', 
   assert.match(html, /name="lead-magnet"/i, 'commented-out lead-magnet section should stay in the file for re-enable');
 });
 
-test('offer band is present', () => {
-  assert.match(html, /fractional technology advisor/i, 'offer lede must appear on the page');
-  assert.match(html, /better ways of working across your teams/i, 'offer lede close must appear on the page');
+test('advisor band is present', () => {
+  assert.match(html, /AI moved faster than anyone could change the business around it/i, 'advisor lede must appear on the page');
   for (const step of ['Clarity', 'Alignment', 'Momentum']) {
     assert.match(html, new RegExp(step, 'i'), `offer rail step "${step}" must appear`);
   }
-  assert.match(html, /upstream and downstream/i, 'offer close must appear on the page');
+  assert.match(html, /the business changes with the technology/i, 'advisor close must appear on the page');
   assert.match(html, /what improved and why/i, 'value close must appear on the page');
+});
+
+test('hero leads with the stalled-work line and keeps scope unrestricted', () => {
+  assert.match(html, /I make <span class="u">stalled work/i, 'hero h1 must be the stalled-work line');
+  assert.match(html, /whoever else ended up owning AI/i, 'hero role line must keep the open door');
+  assert.doesNotMatch(html, /CEOs, COOs, CTOs/, 'title-list audience framing must stay gone');
+  assert.doesNotMatch(html, /a handful of engineering teams|product companies with a few engineering teams/i, 'company-size qualifiers must stay out (too restrictive)');
+  assert.match(html, /without an overhaul you can't afford to run/i, 'hero deck must keep the without-clause');
+  assert.match(html, /find exactly where that's costing you/i, 'hero deck must lead with diagnosis');
+});
+
+test('activation cycle framing is present', () => {
+  assert.match(html, /90-day Activation Cycle/, 'the Activation Cycle must be named');
+  assert.match(html, /week 12/i, 'the week-12 outcome must appear');
 });
 
 test('white palette holds — no tan/terracotta regression', () => {
@@ -97,6 +110,8 @@ test('no known regressions', () => {
   assert.doesNotMatch(html, /What leadership decides/i, 'removed leadership line must stay gone');
   assert.doesNotMatch(html, /no fixed boundary/i, 'open-set lore section must stay gone');
   assert.doesNotMatch(html, /studied mathematics/i, 'math backstory must stay gone');
+  assert.doesNotMatch(html, /—/, 'no em dashes (voice rule)');
+  assert.doesNotMatch(html, /fractional/i, 'broader advisory offering must stay unnamed on the site');
 });
 
 test('one-pager exists and is branded', () => {
