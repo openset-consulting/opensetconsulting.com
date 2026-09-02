@@ -29,7 +29,7 @@ test('Netlify contact form is fully wired', () => {
 });
 
 test('referenced local assets exist on disk', () => {
-  for (const f of ['erin-geoghan.jpg', 'favicon.svg', 'og-image.png', 'privacy.html', 'thanks.html']) {
+  for (const f of ['erin-geoghan.jpg', 'favicon.svg', 'og-image.png', 'privacy.html', 'thanks.html', 'coaching.html', 'residency.html', 'technical-leadership-residency.pdf', 'head-of-ai-checklist.html', 'erin-illustration.jpg']) {
     assert.ok(existsSync(join(root, f)), `missing asset: ${f}`);
   }
 });
@@ -99,7 +99,7 @@ test('activation cycle framing is present', () => {
 });
 
 test('white palette holds — no tan/terracotta regression', () => {
-  for (const f of ['index.html', 'privacy.html', 'thanks.html', 'one-pager.html', 'og-image.html', 'favicon.svg']) {
+  for (const f of ['index.html', 'coaching.html', 'residency.html', 'privacy.html', 'thanks.html', 'one-pager.html', 'og-image.html', 'favicon.svg', 'head-of-ai-checklist.html']) {
     assert.doesNotMatch(read(f), /F4F1EA|ECE7DB|A8392A|1F4D47|C2912F/i, `${f} must not contain old palette colors`);
   }
   assert.match(html, /<meta name="theme-color" content="#FFFFFF"/i, 'theme-color is white');
@@ -112,6 +112,83 @@ test('no known regressions', () => {
   assert.doesNotMatch(html, /studied mathematics/i, 'math backstory must stay gone');
   assert.doesNotMatch(html, /—/, 'no em dashes (voice rule)');
   assert.doesNotMatch(html, /fractional/i, 'broader advisory offering must stay unnamed on the site');
+});
+
+test('coaching page is wired to the consulting page and holds the voice rules', () => {
+  const coaching = read('coaching.html');
+  assert.match(html, /href="coaching\.html"/, 'consulting page must link to coaching');
+  assert.match(coaching, /href="index\.html"/, 'coaching page must link back to consulting');
+  assert.match(coaching, /Open Set Coaching/, 'coaching page is branded');
+  assert.match(coaching, /The Technical Leadership Residency/, 'the offering must be named');
+  assert.doesNotMatch(coaching, /\u2014/, 'no em dashes (voice rule)');
+  assert.doesNotMatch(coaching, /\$\s?\d/, 'pricing stays off the coaching page');
+  const h1s = (coaching.match(/<h1[\s>]/gi) || []).length;
+  assert.equal(h1s, 1, 'coaching page should have exactly one h1');
+});
+
+test('one-pager download is gated behind the email capture form', () => {
+  const coaching = read('coaching.html');
+  const delivery = read('residency.html');
+  assert.match(coaching, /<form[^>]*\bname="residency-download"/i, 'capture form must be name="residency-download"');
+  assert.match(coaching, /<form[^>]*method="POST"/i, 'capture form must POST');
+  assert.match(coaching, /<form[^>]*action="\/?residency\.html"/i, 'capture form action -> delivery page');
+  assert.match(coaching, /data-netlify="true"/i, 'data-netlify flag');
+  assert.match(coaching, /data-netlify-honeypot="bot-field"/i, 'honeypot configured');
+  assert.match(coaching, /name="bot-field"/i, 'honeypot field present');
+  assert.match(
+    coaching,
+    /<input[^>]*type="hidden"[^>]*name="form-name"[^>]*value="residency-download"/i,
+    'hidden form-name input (required for Netlify detection)'
+  );
+  assert.match(coaching, /<input[^>]*id="op-email"[^>]*type="email"[^>]*required/i, 'email is required');
+  assert.doesNotMatch(coaching, /href="technical-leadership-residency\.pdf"/i, 'the PDF must never be linked directly from the coaching page');
+  assert.match(coaching, /id="one-pager"/, 'the capture section must be anchorable');
+  assert.match(delivery, /href="technical-leadership-residency\.pdf"/i, 'delivery page serves the PDF');
+  assert.match(delivery, /content="noindex, nofollow"/i, 'delivery page must be noindex');
+  assert.doesNotMatch(delivery, /\u2014/, 'no em dashes (voice rule)');
+  assert.match(read('robots.txt'), /Disallow: \/residency\.html/, 'delivery page disallowed in robots.txt');
+});
+
+test('head of AI checklist page is complete and on-brand', () => {
+  const c = read('head-of-ai-checklist.html');
+  for (const view of ['view-intro', 'view-quiz', 'view-result']) {
+    assert.match(c, new RegExp(`<section id="${view}"`), `checklist must keep the ${view} section`);
+  }
+  assert.match(c, /id="btn-start"/, 'start button present');
+  assert.match(c, /id="cta-book"[^>]*href="https:\/\/calendar\.app\.google\/6GFwQByUaJ4S3Rk66"/, 'result CTA must use the site booking URL');
+  assert.match(c, /id="save-btn"/, 'email-results button present');
+  assert.match(c, /src="erin-illustration\.jpg"/, 'illustration referenced by relative path (not base64)');
+  assert.doesNotMatch(c, /data:image\/jpeg;base64/, 'base64 image must stay slimmed out');
+  assert.match(c, /rel="canonical" href="https:\/\/opensetconsulting\.com\/head-of-ai-checklist"/, 'canonical uses the clean URL');
+  assert.match(c, /Fraunces/, 'checklist uses the site display face');
+  assert.doesNotMatch(c, /Newsreader/, 'old display face must stay gone');
+  assert.doesNotMatch(c, /—/, 'no em dashes (voice rule)');
+  const h1s = (c.match(/<h1[\s>]/gi) || []).length;
+  assert.equal(h1s, 1, 'checklist page should have exactly one h1');
+});
+
+test('checklist results email is wired to Netlify forms, with the mailto fallback kept', () => {
+  const c = read('head-of-ai-checklist.html');
+  assert.match(c, /<form[^>]*\bname="checklist-results"/i, 'static detection form must be name="checklist-results"');
+  assert.match(c, /<form[^>]*\bname="checklist-results"[^>]*data-netlify="true"/i, 'data-netlify flag');
+  assert.match(c, /<form[^>]*\bname="checklist-results"[^>]*data-netlify-honeypot="bot-field"/i, 'honeypot configured');
+  assert.match(c, /<input[^>]*type="hidden"[^>]*name="form-name"[^>]*value="checklist-results"/i, 'hidden form-name input (required for Netlify detection)');
+  for (const field of ['email', 'score', 'results', 'source']) {
+    assert.match(c, new RegExp(`name="${field}"`), `detection form must declare the ${field} field`);
+  }
+  assert.match(c, /form\.append\("form-name","checklist-results"\)/, 'fetch submission must send form-name');
+  assert.doesNotMatch(c, /EMAIL_ENDPOINT = "REPLACE_WITH_ENDPOINT"/, 'endpoint must be wired');
+  assert.match(c, /mailto:"\+ERIN_EMAIL/, 'mailto fallback must stay in place');
+});
+
+test('homepage routes to the checklist from both entry points, booking stays primary', () => {
+  const entries = (html.match(/href="head-of-ai-checklist\.html"/g) || []).length;
+  assert.equal(entries, 2, 'exactly two checklist entry points on the homepage');
+  assert.match(html, /Not ready<br>to talk yet\?/, 'mid-page nudge present after the recognition section');
+  assert.match(html, /Prefer to start on your own\?/, 'pre-contact nudge present above the booking section');
+  const bookings = (html.match(/calendar\.app\.google\/6GFwQByUaJ4S3Rk66/g) || []).length;
+  assert.ok(bookings >= 3, 'primary booking CTAs must remain');
+  assert.match(read('sitemap.xml'), /head-of-ai-checklist/, 'checklist is in the sitemap');
 });
 
 test('one-pager exists and is branded', () => {
