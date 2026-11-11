@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Head of AI Checklist · Open Set Consulting</title>
+<meta name="description" content="Ten checks that separate real readiness from the look of it. Score your own readiness to scale AI in about four minutes.">
+<meta name="author" content="Erin Geoghan">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="canonical" href="https://opensetconsulting.com/head-of-ai-checklist">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Open Set Consulting">
+<meta property="og:title" content="The Head of AI Checklist · Open Set Consulting">
+<meta property="og:description" content="Ten checks that separate real readiness from the look of it. Score your own readiness to scale AI in about four minutes.">
+<meta property="og:url" content="https://opensetconsulting.com/head-of-ai-checklist">
+<meta property="og:image" content="https://opensetconsulting.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Head of AI Checklist · Open Set Consulting">
+<meta name="twitter:description" content="Score your own readiness to scale AI in about four minutes.">
+<meta name="twitter:image" content="https://opensetconsulting.com/og-image.png">
+
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="og-image.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FFFFFF; --ink:#0F172A; --teal:#155E75; --teal-2:#164E63;
+    --accent:#64748B; --mut:#475569; --line:rgba(15,23,42,0.14);
+    --maxw:900px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);
+    font-family:'Space Grotesk',system-ui,-apple-system,sans-serif;line-height:1.5}
+  .serif{font-family:'Fraunces',Georgia,serif}
+  a{color:var(--teal);text-underline-offset:3px}
+  button{font:inherit;cursor:pointer}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:24px 28px 64px}
+  .top{display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+    padding-bottom:10px;border-bottom:1px solid var(--ink)}
+  .top .brand{font-family:'Fraunces',Georgia,serif;font-size:23px;font-weight:500;color:var(--ink);text-decoration:none}
+  .top .tag{font-size:14px;color:var(--mut)}
+  .hidden{display:none !important}
+
+  /* intro */
+  .intro{display:grid;grid-template-columns:1fr 320px;gap:52px;padding-top:52px;align-items:start}
+  .intro h1{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:58px;
+    line-height:1.03;letter-spacing:-.015em;margin:0;text-wrap:pretty}
+  .intro .lede{font-size:19px;line-height:1.55;color:#475569;max-width:52ch;margin:26px 0 0;text-wrap:pretty}
+  .startrow{display:flex;flex-wrap:wrap;align-items:center;gap:22px;padding-top:40px}
+  .btn-primary{background:var(--teal);color:var(--paper);border:none;border-radius:4px;
+    padding:17px 30px;font-size:17px;font-weight:500;transition:background .18s}
+  .btn-primary:hover{background:var(--teal-2)}
+  .note{font-size:14px;color:var(--mut)}
+  .seq{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
+    font-size:15px;line-height:1.6;color:#475569;max-width:60ch;text-wrap:pretty}
+  .aside img{width:320px;display:block;border-radius:6px;mix-blend-mode:multiply}
+  .aside p{font-size:14px;line-height:1.5;color:#475569;margin:14px 0 0}
+  .aside .name{font-family:'Fraunces',Georgia,serif;font-size:18px;margin:6px 0 0}
+
+  /* quiz */
+  .quiz{display:grid;grid-template-columns:230px 1fr;gap:44px;padding-top:26px;align-items:start}
+  .rail{display:flex;flex-direction:column;gap:2px;position:sticky;top:16px}
+  .railbtn{display:grid;grid-template-columns:18px 1fr;gap:11px;align-items:start;text-align:left;
+    background:transparent;border:none;border-radius:3px;padding:7px 9px;color:#64748B;
+    font-size:13px;line-height:1.35;transition:background .15s}
+  .railbtn:hover{background:rgba(15,23,42,0.06)}
+  .railbtn.cur{background:rgba(15,23,42,0.07);color:var(--ink);font-weight:500}
+  .railbtn.done{color:var(--ink)}
+  .rbox{width:15px;height:15px;margin-top:1px;border:1.5px solid rgba(15,23,42,0.35);
+    border-radius:2px;display:flex;align-items:center;justify-content:center;
+    font-size:10px;color:var(--paper);flex:none}
+  .rdiv{height:1px;background:var(--line);margin:6px 8px}
+
+  .panel{position:relative}
+  .ghost{position:absolute;right:-4px;top:-38px;font-family:'Fraunces',Georgia,serif;
+    font-size:150px;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(21,94,117,0.25);
+    letter-spacing:-.05em;pointer-events:none;user-select:none}
+  .eyebrow{font-size:14px;color:var(--mut);padding-bottom:10px}
+  .panel h2{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:38px;line-height:1.06;
+    letter-spacing:-.012em;margin:0;max-width:18ch;text-wrap:pretty;position:relative}
+  .panel .body{font-size:17px;line-height:1.55;color:#475569;max-width:54ch;margin:13px 0 0;text-wrap:pretty}
+  .ask{margin-top:24px;background:var(--teal-2);color:var(--paper);border-radius:6px;
+    padding:26px 30px 24px;position:relative}
+  .ask .tag{position:absolute;left:34px;top:-11px;background:var(--paper);color:var(--teal-2);
+    font-size:12px;font-weight:500;padding:3px 10px;border-radius:2px}
+  .ask .q{font-family:'Fraunces',Georgia,serif;font-size:26px;line-height:1.25;margin:0;max-width:26ch;text-wrap:pretty}
+  .answers{display:flex;flex-wrap:wrap;gap:10px;padding-top:20px}
+  .ans{border-radius:4px;padding:11px 20px;font-size:16px;font-weight:500;
+    border:1px solid rgba(255,255,255,0.5);background:transparent;color:var(--paper);transition:all .16s}
+  .ans:hover{background:var(--paper);color:var(--teal-2);border-color:var(--paper)}
+  .ans.sel{background:var(--paper);color:var(--teal-2);border-color:var(--paper)}
+  .navrow{display:flex;align-items:center;gap:26px;padding-top:16px;font-size:15px}
+  .navrow button{background:none;border:none;padding:0;color:var(--mut);
+    text-decoration:underline;text-underline-offset:3px}
+  .navrow button:hover{color:var(--ink)}
+
+  /* result */
+  .result{padding-top:52px}
+  .scoregrid{display:grid;grid-template-columns:120px 1fr;gap:40px;align-items:start}
+  .bignum{font-family:'Fraunces',Georgia,serif;font-size:124px;line-height:.8;color:var(--teal);letter-spacing:-.04em}
+  .bignum + div{font-size:14px;color:var(--mut);padding-top:12px}
+  .result h2{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:44px;line-height:1.08;
+    letter-spacing:-.012em;margin:0;text-wrap:pretty}
+  .result .bandbody{font-size:19px;line-height:1.6;color:#475569;max-width:56ch;margin:20px 0 0;text-wrap:pretty}
+  .review{margin-top:44px;padding-top:12px;border-top:1px solid var(--ink)}
+  .revrow{width:100%;text-align:left;display:grid;grid-template-columns:28px 1fr auto;align-items:baseline;
+    gap:16px;background:none;border:none;border-bottom:1px solid rgba(15,23,42,0.12);padding:12px 0;transition:color .16s}
+  .revrow:hover{color:var(--teal)}
+  .revrow .rn{font-size:14px;color:#94A3B8}
+  .revrow .rt{font-size:17px}
+  .revrow .rs{font-size:14px}
+
+  .cta{margin-top:64px;display:grid;grid-template-columns:150px 1fr;gap:40px;align-items:start;
+    padding-top:38px;border-top:1px solid var(--ink)}
+  .cta img{width:150px;aspect-ratio:1;object-fit:cover;object-position:30% 42%;border-radius:50%;display:block;mix-blend-mode:multiply}
+  .cta h2{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:36px;line-height:1.1;margin:0;max-width:24ch;text-wrap:pretty}
+  .cta .body{font-size:18px;line-height:1.6;color:#475569;max-width:58ch;margin:16px 0 0;text-wrap:pretty}
+  .ctarow{display:flex;flex-wrap:wrap;align-items:center;gap:22px;padding-top:28px}
+  .btn-book{background:var(--teal);color:var(--paper);border-radius:4px;padding:16px 28px;
+    font-size:17px;font-weight:500;text-decoration:none;transition:background .18s}
+  .btn-book:hover{background:var(--teal-2)}
+  .sig{font-family:'Fraunces',Georgia,serif;font-size:18px;color:var(--mut);margin:32px 0 0}
+
+  /* email courtesy net */
+  .savebox{margin-top:26px;padding:20px 22px;border:1px solid var(--line);border-radius:6px;background:#F5F7FB;max-width:60ch}
+  .savebox p{margin:0 0 12px;font-size:15px;line-height:1.55;color:#475569}
+  .saveform{display:flex;flex-wrap:wrap;gap:10px}
+  .saveform input{flex:1;min-width:200px;border:1px solid var(--line);border-radius:4px;
+    padding:11px 12px;font:inherit;font-size:15px;background:#fff;color:var(--ink)}
+  .saveform input:focus{outline:none;border-color:var(--teal)}
+  .saveform button{background:var(--teal);color:var(--paper);border:none;border-radius:4px;padding:11px 18px;font-size:15px;font-weight:500}
+  .saveform button:hover{background:var(--teal-2)}
+  .savemsg{font-size:14px;margin-top:10px;min-height:1.2em}
+  .savemsg.ok{color:var(--teal)}
+  .savemsg.err{color:var(--accent)}
+
+  @media (max-width:760px){
+    .intro{grid-template-columns:1fr}
+    .aside{order:-1}
+    .aside img{width:100%;max-width:320px}
+    .intro h1{font-size:44px}
+    .quiz{grid-template-columns:1fr}
+    .rail{position:static;flex-direction:row;flex-wrap:wrap;gap:4px;margin-bottom:8px}
+    .railbtn span:last-child{display:none}
+    .rdiv{display:none}
+    .scoregrid{grid-template-columns:1fr}
+    .cta{grid-template-columns:1fr}
+    .cta img{width:120px}
+    .ghost{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="brand" href="/">Open Set Consulting</a>
+    <span class="tag">The Head of AI Checklist</span>
+  </div>
+
+  <!-- INTRO -->
+  <section id="view-intro" class="intro">
+    <div>
+      <h1 class="serif">10 things to have in place before you scale AI</h1>
+      <p class="lede">Momentum is easy to feel and hard to prove. These are the ten checks that separate real readiness from the look of it. Answer honestly, one at a time. You'll leave with a read on what to prioritize first.</p>
+      <div class="startrow">
+        <button class="btn-primary" id="btn-start">Start the checklist</button>
+        <span class="note">Ten questions. About four minutes.</span>
+      </div>
+      <p class="seq">The checks run in an order: measure first (items 1, 5 and 6), then govern (2, 3), secure (4), prove (7, 8), and finally widen (9, 10). Once you've scaled, widen the circle and run it again.</p>
+    </div>
+    <div class="aside">
+      <img src="erin-illustration.jpg" alt="Sketch of Erin working at her laptop with a notebook and pencil">
+      <p>A quick self-check to help you see where to start.</p>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="view-quiz" class="quiz hidden">
+    <div class="rail" id="rail"></div>
+    <div class="panel">
+      <div class="ghost serif" id="q-ghost">1</div>
+      <div class="eyebrow" id="q-eyebrow">Foundation &amp; guardrails · 1 of 10</div>
+      <h2 class="serif" id="q-title">Title</h2>
+      <p class="body" id="q-body">Body</p>
+      <div class="ask">
+        <span class="tag">Ask yourself</span>
+        <p class="q serif" id="q-question">Question</p>
+        <div class="answers">
+          <button class="ans" id="ans-yes">Yes, we have this</button>
+          <button class="ans" id="ans-no">Not yet</button>
+        </div>
+      </div>
+      <div class="navrow">
+        <button id="q-back">Back to the start</button>
+        <button id="q-next">Skip this one</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULT -->
+  <section id="view-result" class="result hidden">
+    <div class="scoregrid">
+      <div>
+        <div class="bignum serif" id="r-score">0</div>
+        <div>of ten in place</div>
+      </div>
+      <div>
+        <h2 class="serif" id="r-bandtitle">Band</h2>
+        <p class="bandbody" id="r-bandbody">Body</p>
+        <div class="review" id="r-review"></div>
+        <div class="navrow" style="padding-top:18px">
+          <button id="r-restart">Start over</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta">
+      <img src="erin-illustration.jpg" alt="Sketch of Erin at work">
+      <div>
+        <h2 class="serif" id="cta-title">Want help deciding which gaps to close first?</h2>
+        <p class="body" id="cta-body">I help Heads of AI turn a working pilot into a governed practice that scales, with the baseline, guardrails, and measurement built in so it keeps running without me. On a call we'll find your two or three highest-leverage gaps and the order to close them.</p>
+        <div class="ctarow">
+          <a class="btn-book" id="cta-book" href="https://calendar.app.google/6GFwQByUaJ4S3Rk66" target="_blank" rel="noopener">Book an AI Scaling Strategy Call</a>
+          <a href="mailto:erin@opensetconsulting.com">or write to me</a>
+        </div>
+
+        <div class="savebox">
+          <p>Not ready to talk yet? Leave your email and I'll send you a copy of your results, so you can pick this back up whenever it's useful.</p>
+          <div class="saveform">
+            <input type="email" id="save-email" placeholder="you@company.com" aria-label="Your email">
+            <button id="save-btn">Email me my results</button>
+          </div>
+          <div class="savemsg" id="save-msg" role="status"></div>
+        </div>
+
+        <p class="sig serif">Erin Geoghan · Open Set Consulting · Richmond, Virginia</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Static mirror of the results submission so Netlify detects the form at
+     deploy time. The live submission happens via fetch in the script below. -->
+<form name="checklist-results" method="POST" action="/thanks.html" data-netlify="true" data-netlify-honeypot="bot-field" hidden aria-hidden="true">
+  <input type="hidden" name="form-name" value="checklist-results">
+  <input name="bot-field">
+  <input type="email" name="email">
+  <input name="score">
+  <textarea name="results"></textarea>
+  <input name="source">
+</form>
+
+<script>
+(function(){
+  "use strict";
+
+  // ====================================================================
+  //  EMAIL ENDPOINT: swap this one value to change where results go.
+  //  Currently wired to this site's Netlify Forms backend (the hidden
+  //  form name="checklist-results" near the end of the body is what lets
+  //  Netlify detect it at deploy time). Submissions show up in the
+  //  Netlify dashboard and fire the site's form notifications.
+  //  To move to Formspree/Kit/MailerLite later, point this at their
+  //  endpoint and adjust the fetch body to what they expect.
+  //  If reset to "REPLACE_WITH_ENDPOINT", the button falls back to a
+  //  prefilled mailto: to Erin, so the page still works unwired.
+  // ====================================================================
+  var EMAIL_ENDPOINT = "/";
+  var ERIN_EMAIL = "erin@opensetconsulting.com";
+  // ====================================================================
+
+  var ITEMS = [
+    { g:"Foundation & guardrails", t:"A baseline captured before you scale", b:"You measured the work before AI touched it: cycle time, throughput, cost per outcome. Good looks like real numbers on paper.", q:"Could you answer what AI improved with a number instead of a feeling?" },
+    { g:"Foundation & guardrails", t:"A named owner and a community of learning", b:"One person owns the decisions, so approvals move fast. A small community of learning meets to share wins and turn them into reusable assets.", q:"Is there a standing place your team learns AI from each other?" },
+    { g:"Foundation & guardrails", t:"Governance codified into the system", b:"The rules live where the work happens and enforce themselves: shared config in the repo, automated checks, defaults everyone inherits. Good looks like guardrails people can't casually skip.", q:"Are your AI rules enforced by the system, or by good intentions?" },
+    { g:"Foundation & guardrails", t:"A deliberate security posture", b:"You decide what AI can reach and default to closed, opening one use case at a time. Sensitive work flows through governed channels only.", q:"Can you say where your work goes once AI touches it?" },
+    { g:"Foundation & guardrails", t:"Adoption measured by depth", b:"You track who works through AI week after week, and which workflows would be missed if it vanished. Good looks like a clear count of sustained users.", q:"Do you know which workflows run through AI every single week?" },
+    { g:"Traction & durability", t:"Outcomes tied to the baseline", b:"Movement against your baseline is the goal: cycle time, throughput, quality, defects, reviewed on a cadence. Usage explains results rather than standing in for them.", q:"If usage doubled but delivery held flat, would you notice fast?" },
+    { g:"Traction & durability", t:"Cost you can see and steer", b:"Spend is visible per team and workflow, and someone owns the tradeoff. Good looks like knowing your cost per useful outcome.", q:"Could you name your most expensive AI workflow and defend it?" },
+    { g:"Traction & durability", t:"Practice that lives in the system", b:"Your good patterns are captured where the work happens: shared configs, documented workflows, a registry of what runs where. Good looks like a practice that survives a key person's absence.", q:"If your AI champion left tomorrow, how much would stop?" },
+    { g:"Traction & durability", t:"You expand one capability at a time", b:"New surfaces and permissions turn on deliberately, each earning its place by the outcome it unlocks. Good looks like a sequence you can explain.", q:"Is there a reason behind the order you're turning things on?" },
+    { g:"Traction & durability", t:"Audit-ready documentation", b:"The story of how AI is governed is captured as you go: what's in use, who owns it, what data it touches, what changed when. Good looks like a clear answer without a fire drill.", q:"If an auditor asked how AI is governed here, could you hand them a doc today?" }
+  ];
+  var BANDS = [
+    { min:8, title:"Strong foundation for scaling", body:"The structure is in place. Scaling now compounds your leverage. Focus on sequencing the rollout and holding the line on measurement as volume grows.",
+      cta:"You're ready to scale. Let's make it compound.",
+      ctaBody:"A foundation like yours is rare, and it changes the question from readiness to leverage. On a call we'll pressure-test your rollout sequence, find where the next gains compound fastest, and make sure your measurement holds as you widen the circle." },
+    { min:5, title:"Real momentum, addressable gaps", body:"You're moving, and a few missing pieces will surface as friction the moment you widen the circle. Close them first and scaling gets smoother.",
+      cta:"Want help deciding which gaps to close first?",
+      ctaBody:"I help Heads of AI turn a working pilot into a governed practice that scales, with the baseline, guardrails, and measurement built in so it keeps running without me. On a call we'll find your two or three highest-leverage gaps and the order to close them." },
+    { min:0, title:"Foundations come first", body:"The appetite is there and the pilots may look good, but scaling on this footing tends to multiply cost and confusion. A short push on the foundations pays for itself before you expand.",
+      cta:"Want a faster path to solid foundations?",
+      ctaBody:"I help Heads of AI turn a working pilot into a governed practice that scales, with the baseline, guardrails, and measurement built in. On a call we'll pick the two or three foundations that unblock the most and get them moving first, so the rest of the list gets easier instead of heavier." }
+  ];
+  var pad = function(n){ return n < 10 ? "0"+n : ""+n; };
+  var $ = function(id){ return document.getElementById(id); };
+
+  var state = { view:"intro", i:0, answers:{} };
+
+  var views = { intro:$("view-intro"), quiz:$("view-quiz"), result:$("view-result") };
+  function show(v){
+    state.view = v;
+    Object.keys(views).forEach(function(k){ views[k].classList.toggle("hidden", k!==v); });
+    if(v==="quiz") renderQuiz();
+    if(v==="result") renderResult();
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+
+  // build rail once
+  var rail = $("rail");
+  ITEMS.forEach(function(it,n){
+    var b=document.createElement("button");
+    b.className="railbtn";
+    b.innerHTML='<span class="rbox"></span><span>'+it.t+'</span>';
+    b.addEventListener("click",function(){ state.i=n; show("quiz"); });
+    rail.appendChild(b);
+    if(n===4){ var d=document.createElement("span"); d.className="rdiv"; rail.appendChild(d); }
+  });
+
+  function renderQuiz(){
+    var it = ITEMS[state.i];
+    $("q-ghost").textContent = state.i+1;
+    $("q-eyebrow").textContent = it.g + " · " + (state.i+1) + " of 10";
+    $("q-title").textContent = it.t;
+    $("q-body").textContent = it.b;
+    $("q-question").textContent = it.q;
+    var cur = state.answers[state.i];
+    $("ans-yes").classList.toggle("sel", cur===true);
+    $("ans-no").classList.toggle("sel", cur===false);
+    $("q-back").textContent = state.i===0 ? "Back to the start" : "Previous";
+    $("q-next").textContent = state.i===ITEMS.length-1 ? "See where you stand" : "Skip this one";
+    // rail state
+    var btns = rail.querySelectorAll(".railbtn");
+    btns.forEach(function(btn,n){
+      var a = state.answers[n], isCur = n===state.i;
+      btn.classList.toggle("cur", isCur);
+      btn.classList.toggle("done", a!==undefined);
+      var box = btn.querySelector(".rbox");
+      if(a===true){ box.style.background="var(--teal)"; box.style.borderColor="var(--teal)"; box.textContent="\u2713"; }
+      else if(a===false){ box.style.background="var(--accent)"; box.style.borderColor="var(--accent)"; box.textContent="\u2013"; }
+      else { box.style.background="transparent"; box.style.borderColor= isCur ? "var(--ink)" : "rgba(15,23,42,0.35)"; box.textContent=""; }
+    });
+  }
+
+  function answer(val){
+    state.answers[state.i] = val;
+    if(state.i >= ITEMS.length-1){ show("result"); }
+    else { state.i++; renderQuiz(); }
+  }
+  function move(d){
+    var i = state.i + d;
+    if(i<0){ show("intro"); return; }
+    if(i>=ITEMS.length){ show("result"); return; }
+    state.i=i; renderQuiz();
+  }
+
+  function scoreVal(){ return Object.keys(state.answers).filter(function(k){return state.answers[k]===true;}).length; }
+
+  function renderResult(){
+    var score = scoreVal();
+    var band = BANDS.find(function(b){ return score>=b.min; });
+    $("r-score").textContent = score;
+    $("r-bandtitle").textContent = band.title;
+    $("r-bandbody").textContent = band.body;
+    $("cta-title").textContent = band.cta;
+    $("cta-body").textContent = band.ctaBody;
+    var rev = $("r-review"); rev.innerHTML="";
+    ITEMS.forEach(function(it,n){
+      var a = state.answers[n];
+      var stateTxt = a===true ? "In place" : a===false ? "Not yet" : "Skipped";
+      var col = a===true ? "var(--teal)" : a===false ? "var(--accent)" : "#94A3B8";
+      var row=document.createElement("button");
+      row.className="revrow";
+      row.innerHTML='<span class="rn">'+pad(n+1)+'</span><span class="rt">'+it.t+'</span><span class="rs" style="color:'+col+'">'+stateTxt+'</span>';
+      row.addEventListener("click",function(){ state.i=n; show("quiz"); });
+      rev.appendChild(row);
+    });
+  }
+
+  function resultsText(){
+    var score = scoreVal();
+    var band = BANDS.find(function(b){ return score>=b.min; });
+    var lines = ["Head of AI Checklist results", "", "Score: "+score+" of 10 ("+band.title+")", band.body, ""];
+    ITEMS.forEach(function(it,n){
+      var a=state.answers[n];
+      var s = a===true?"[x] In place":a===false?"[ ] Not yet":"[ ] Skipped";
+      lines.push(s+"  "+pad(n+1)+". "+it.t);
+      if(a!==true){ lines.push("       What good looks like: "+it.b); }
+    });
+    lines.push("", "Next step: book an AI Scaling Strategy Call at https://calendar.app.google/6GFwQByUaJ4S3Rk66", "opensetconsulting.com");
+    return lines.join("\n");
+  }
+
+  // email courtesy net
+  function saveResults(){
+    var emailEl = $("save-email"), msg = $("save-msg"), btn = $("save-btn");
+    var email = (emailEl.value||"").trim();
+    msg.className="savemsg";
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
+      msg.textContent="Enter a valid email first."; msg.className="savemsg err"; return;
+    }
+    var payload = { email: email, score: scoreVal(), results: resultsText(), source: "head-of-ai-checklist" };
+
+    if(EMAIL_ENDPOINT && EMAIL_ENDPOINT.indexOf("REPLACE_WITH")!==0){
+      btn.disabled=true; msg.textContent="Sending...";
+      var form = new URLSearchParams();
+      form.append("form-name","checklist-results");
+      form.append("email", payload.email);
+      form.append("score", String(payload.score));
+      form.append("results", payload.results);
+      form.append("source", payload.source);
+      fetch(EMAIL_ENDPOINT, {
+        method:"POST",
+        headers:{ "Content-Type":"application/x-www-form-urlencoded" },
+        body: form.toString()
+      }).then(function(r){
+        btn.disabled=false;
+        if(r.ok){ msg.textContent="Got it. I'll email your results over, and you can pick this up whenever you're ready."; msg.className="savemsg ok"; emailEl.value=""; }
+        else { throw new Error("bad status"); }
+      }).catch(function(){
+        btn.disabled=false;
+        msg.textContent="Something went wrong. You can also email me directly at "+ERIN_EMAIL+".";
+        msg.className="savemsg err";
+      });
+    } else {
+      // fallback before endpoint is wired: open a prefilled mail to Erin
+      var subject = encodeURIComponent("My Head of AI Checklist results ("+scoreVal()+"/10)");
+      var bodyTxt = encodeURIComponent(resultsText()+"\n\nFrom: "+email);
+      window.location.href = "mailto:"+ERIN_EMAIL+"?subject="+subject+"&body="+bodyTxt;
+      msg.textContent="Opening your email app..."; msg.className="savemsg ok";
+    }
+  }
+
+  // wire up
+  $("btn-start").addEventListener("click",function(){ state.i=0; show("quiz"); });
+  $("ans-yes").addEventListener("click",function(){ answer(true); });
+  $("ans-no").addEventListener("click",function(){ answer(false); });
+  $("q-back").addEventListener("click",function(){ state.i===0 ? show("intro") : move(-1); });
+  $("q-next").addEventListener("click",function(){ move(1); });
+  $("r-restart").addEventListener("click",function(){ state={view:"intro",i:0,answers:{}}; show("intro"); });
+  $("save-btn").addEventListener("click", saveResults);
+  $("save-email").addEventListener("keydown",function(e){ if(e.key==="Enter") saveResults(); });
+
+  // keyboard shortcuts in quiz
+  window.addEventListener("keydown",function(e){
+    if(state.view!=="quiz"||!e.key) return;
+    if(e.target && (e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA")) return;
+    if(e.key==="ArrowRight") move(1);
+    else if(e.key==="ArrowLeft") move(-1);
+    else if(e.key==="1"||e.key.toLowerCase()==="y") answer(true);
+    else if(e.key==="2"||e.key.toLowerCase()==="n") answer(false);
+  });
+})();
+</script>
+</body>
+</html>
