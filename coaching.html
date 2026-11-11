@@ -3,61 +3,80 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Open Set Coaching · The Technical Leadership Residency</title>
+<title>Open Set Coaching · Leadership coaching for technical leaders in Richmond, VA</title>
 <meta name="author" content="Erin Geoghan" />
-<meta name="description" content="The Technical Leadership Residency: 1:1 coaching for your strongest technical leaders, built around one real outcome over 90 days, so they can lead high-stakes work without constant executive intervention." />
+<meta name="description" content="Leadership coaching for engineering and product leaders, based in Richmond, Virginia. Two formats: regular one-on-one coaching against goals the leader sets, or a 90 day residency around one business initiative. In person in Richmond, on video everywhere else." />
 <meta name="theme-color" content="#FFFFFF" />
 <link rel="canonical" href="https://opensetconsulting.com/coaching.html" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Open Set Coaching" />
-<meta property="og:title" content="Open Set Coaching · The Technical Leadership Residency" />
-<meta property="og:description" content="Help your strongest technical leaders lead high-stakes work without constant executive intervention. One leader, one outcome, 90 days." />
+<meta property="og:title" content="Open Set Coaching · Leadership coaching for technical leaders, Richmond VA" />
+<meta property="og:description" content="One-on-one leadership coaching for engineering and product leaders, in two formats. Based in Richmond, Virginia." />
 <meta property="og:url" content="https://opensetconsulting.com/coaching.html" />
 <meta property="og:image" content="https://opensetconsulting.com/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Open Set Coaching: The Technical Leadership Residency." />
+<meta property="og:image:alt" content="Open Set Coaching: 1:1 coaching for technical leaders." />
 <meta property="og:locale" content="en_US" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Open Set Coaching · The Technical Leadership Residency" />
-<meta name="twitter:description" content="Build leaders who can carry the next hard thing, and come out proud, not burned out." />
+<meta name="twitter:title" content="Open Set Coaching · Leadership coaching for technical leaders, Richmond VA" />
+<meta name="twitter:description" content="One-on-one leadership coaching for engineering and product leaders, in two formats. Based in Richmond, Virginia." />
 <meta name="twitter:image" content="https://opensetconsulting.com/og-image.png" />
-<meta name="twitter:image:alt" content="Open Set Coaching: The Technical Leadership Residency." />
+<meta name="twitter:image:alt" content="Open Set Coaching: 1:1 coaching for technical leaders." />
 
 <!-- Favicons -->
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-<link rel="apple-touch-icon" href="og-image.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
-<!-- Structured data: Service -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": "https://opensetconsulting.com/coaching.html#residency",
-  "name": "The Technical Leadership Residency",
-  "serviceType": "Executive and technical leadership coaching",
-  "url": "https://opensetconsulting.com/coaching.html",
-  "description": "One-to-one coaching for strong technical leaders, structured around a single real business outcome across a 90 day cycle. Built for CTOs, VPs of Engineering, and executives developing high-potential technical leaders.",
-  "brand": { "@type": "Brand", "name": "Open Set Coaching" },
-  "provider": {
-    "@type": "ProfessionalService",
-    "@id": "https://opensetconsulting.com/#business",
-    "name": "Open Set Consulting",
-    "url": "https://opensetconsulting.com/"
-  },
-  "areaServed": { "@type": "Country", "name": "United States" },
-  "audience": {
-    "@type": "BusinessAudience",
-    "name": "CTOs, VPs of Engineering, and executives developing high-potential technical leaders"
-  }
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://opensetconsulting.com/#business",
+      "name": "Open Set Consulting",
+      "alternateName": "Open Set Coaching",
+      "url": "https://opensetconsulting.com/coaching.html",
+      "description": "Leadership coaching and advisory for technology leaders, based in Richmond, Virginia.",
+      "address": { "@type": "PostalAddress", "addressLocality": "Richmond", "addressRegion": "VA", "addressCountry": "US" },
+      "areaServed": [ { "@type": "City", "name": "Richmond", "containedInPlace": { "@type": "State", "name": "Virginia" } }, { "@type": "Country", "name": "United States" } ],
+      "founder": { "@type": "Person", "name": "Erin Geoghan", "jobTitle": "Leadership coach and technology advisor", "url": "https://opensetconsulting.com/", "sameAs": ["https://www.linkedin.com/in/eringeoghan/"] },
+      "email": "erin@opensetconsulting.com",
+      "sameAs": ["https://www.linkedin.com/in/eringeoghan/"]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://opensetconsulting.com/coaching.html#coaching",
+      "name": "Leadership Coaching",
+      "serviceType": ["Leadership coaching", "Executive coaching", "Technical leadership coaching"],
+      "url": "https://opensetconsulting.com/coaching.html",
+      "description": "Goals-oriented one-to-one coaching for technical leaders growing into bigger work. An hour every other week or so, on a 3 or 6 month term, with a nonprofit rate available.",
+      "brand": { "@type": "Brand", "name": "Open Set Coaching" },
+      "provider": { "@id": "https://opensetconsulting.com/#business" },
+      "areaServed": [ { "@type": "City", "name": "Richmond", "containedInPlace": { "@type": "State", "name": "Virginia" } }, { "@type": "Country", "name": "United States" } ],
+      "availableChannel": [ { "@type": "ServiceChannel", "name": "In person, Richmond, Virginia" }, { "@type": "ServiceChannel", "name": "Video call" } ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://opensetconsulting.com/coaching.html#residency",
+      "name": "The Technical Leadership Residency",
+      "serviceType": ["Executive coaching", "Technical leadership coaching"],
+      "url": "https://opensetconsulting.com/coaching.html",
+      "description": "One-to-one coaching for a technical leader holding a business initiative, structured around one business outcome across a 90 day cycle. Built for CTOs, VPs of Engineering, and executives developing high-potential technical leaders.",
+      "brand": { "@type": "Brand", "name": "Open Set Coaching" },
+      "provider": { "@id": "https://opensetconsulting.com/#business" },
+      "areaServed": [ { "@type": "City", "name": "Richmond", "containedInPlace": { "@type": "State", "name": "Virginia" } }, { "@type": "Country", "name": "United States" } ],
+      "availableChannel": [ { "@type": "ServiceChannel", "name": "In person, Richmond, Virginia" }, { "@type": "ServiceChannel", "name": "Video call" } ]
+    }
+  ]
 }
 </script>
 
@@ -98,18 +117,15 @@
   img, svg { max-width: 100%; display: block; }
   .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(22px, 5vw, 64px); }
 
-  .btn { display: inline-flex; align-items: center; gap: 11px; font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.13em; text-transform: uppercase; text-decoration: none; padding: 17px 28px; border: none; cursor: pointer; background: var(--accent); color: #FFFFFF; border-radius: 1px; transition: background .3s var(--ease), box-shadow .3s var(--ease); will-change: transform; box-shadow: 0 6px 22px -12px rgba(21,94,117,.55); }
+  .btn { display: inline-flex; align-items: center; gap: 11px; font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.13em; text-transform: uppercase; text-decoration: none; padding: 17px 28px; border: none; cursor: pointer; background: var(--accent); color: #FFFFFF; border-radius: 1px; transition: background .3s var(--ease), box-shadow .3s var(--ease); box-shadow: 0 6px 22px -12px rgba(21,94,117,.55); }
   .btn:hover { background: var(--accent-deep); box-shadow: 0 14px 30px -12px rgba(21,94,117,.7); }
   .btn .arr { transition: transform .3s var(--ease); }
   .btn:hover .arr { transform: translate(3px,-3px); }
-  .btn--ghost { background: transparent; color: var(--accent-soft); box-shadow: none; border: 1px solid var(--line-dark); }
-  .btn--ghost:hover { background: transparent; border-color: var(--accent-soft); box-shadow: none; }
   .tlink { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 3px; opacity: .7; transition: opacity .25s; }
   .tlink:hover { opacity: 1; }
   a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
-  .dark a:focus-visible, footer a:focus-visible { outline-color: var(--accent-soft); }
+  footer a:focus-visible { outline-color: var(--accent-soft); }
 
-  /* grain + reveals */
   .grain { position: fixed; inset: -50%; width: 200%; height: 200%; z-index: 90; pointer-events: none; opacity: .025; mix-blend-mode: soft-light;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     background-size: 180px 180px; }
@@ -117,8 +133,8 @@
   [data-reveal].in { opacity: 1; transform: none; }
 
   /* ---------- masthead + hero ---------- */
-  .cover { position: relative; padding: clamp(22px, 4vh, 40px) 0 clamp(48px, 8vh, 84px); }
-  .cover-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding-bottom: clamp(30px, 7vh, 64px); }
+  .cover { position: relative; padding: clamp(22px, 4vh, 40px) 0 clamp(40px, 7vh, 72px); }
+  .cover-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding-bottom: clamp(26px, 6vh, 56px); }
   .wordmark { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; font-family: var(--display); font-weight: 600; font-size: 17px; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; }
   .wordmark i { font-style: italic; font-weight: 400; color: var(--ink-soft); }
   .wm-mark { width: 22px; height: 22px; }
@@ -127,100 +143,69 @@
 
   .role { font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-deep); display: inline-flex; align-items: center; }
   .role::before { content: ""; width: 24px; height: 1px; background: currentColor; opacity: .7; margin-right: 11px; }
-  .cover-h { font-family: var(--display); font-weight: 500; font-size: clamp(36px, 7vw, 68px); line-height: 1.03; letter-spacing: -0.028em; margin: 18px 0 0; color: var(--ink); max-width: 16ch; text-wrap: balance; }
-  .c-sub { font-family: var(--display); font-weight: 400; font-size: clamp(20px, 2.4vw, 27px); line-height: 1.34; letter-spacing: -0.008em; color: var(--ink); margin: 24px 0 0; max-width: 30ch; text-wrap: balance; }
-  .c-sub em { color: var(--accent); font-style: italic; }
-  .c-cta { display: flex; align-items: center; gap: clamp(16px, 3vw, 30px); flex-wrap: wrap; margin-top: 38px; }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 72px); align-items: end; }
+  .cover-h { font-family: var(--display); font-weight: 500; font-size: clamp(36px, 6vw, 62px); line-height: 1.03; letter-spacing: -0.028em; margin: 16px 0 0; color: var(--ink); max-width: 14ch; text-wrap: balance; }
+  .cover-h em { color: var(--accent); font-style: italic; font-weight: 400; }
+  .pull { position: relative; margin: 0; padding: 30px 0 0 34px; border-left: 2px solid var(--accent); overflow: hidden; }
+  .pull::before { content: "\201C"; position: absolute; left: 24px; top: -14px; font-family: var(--display); font-weight: 500; font-size: 110px; line-height: 1; color: var(--accent); opacity: .22; pointer-events: none; }
+  .pull-orbit { position: absolute; right: -120px; top: -70px; width: 320px; height: 320px; color: var(--line-strong); opacity: .22; pointer-events: none; }
+  .pull blockquote { margin: 0; position: relative; }
+  .pull blockquote p { margin: 0; font-family: var(--display); font-style: italic; font-weight: 400; font-size: clamp(21px, 2.2vw, 27px); line-height: 1.38; letter-spacing: -0.01em; color: var(--ink); max-width: 26ch; text-wrap: pretty; }
+  .pull figcaption { position: relative; margin-top: 20px; display: flex; flex-direction: column; gap: 3px; }
+  .pull figcaption b { font-family: var(--display); font-weight: 600; font-size: 15px; color: var(--ink); }
+  .pull figcaption span { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-deep); }
+  .hero-art { justify-self: end; width: min(100%, 340px); opacity: .85; }
+  .hero-art svg { width: 100%; height: auto; }
+  @media (max-width: 880px) { .hero-art { display: none; } }
+  @media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; gap: 18px; } }
+
+  /* ---------- the two options ---------- */
+  .options { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: clamp(20px, 3vw, 40px); margin-top: clamp(36px, 6vh, 60px); }
+  .opt { border-top: 2px solid var(--accent); padding-top: 22px; display: flex; flex-direction: column; }
+  .opt .kick { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-deep); }
+  .opt h2 { font-family: var(--display); font-weight: 600; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.12; letter-spacing: -0.018em; margin: 10px 0 0; color: var(--ink); }
+  .opt .for { font-style: italic; font-size: 17px; line-height: 1.5; color: var(--ink-soft); margin: 10px 0 0; max-width: 40ch; }
+  .opt ul { list-style: none; margin: 20px 0 0; padding: 0; }
+  .opt li { font-size: 16px; line-height: 1.5; color: var(--ink); padding: 11px 0 11px 22px; border-bottom: 1px solid var(--line); position: relative; }
+  .opt li::before { content: ""; position: absolute; left: 0; top: 23px; width: 10px; height: 1px; background: var(--accent); }
+  .opt li b { font-weight: 600; }
+  .opt .rate { margin: 22px 0 0; font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; line-height: 1.7; color: var(--ink-soft); }
+  .opt .rate a { color: var(--accent-deep); text-decoration: none; border-bottom: 1px solid currentColor; }
+  .opt .rate a:hover { color: var(--accent); }
+  @media (max-width: 760px) { .options { grid-template-columns: 1fr; gap: 34px; } }
+
+  .which { margin-top: clamp(36px, 6vh, 56px); padding-top: 24px; border-top: 1px solid var(--line); display: grid; grid-template-columns: 190px minmax(0,1fr); gap: clamp(20px, 4vw, 64px); }
+  .which .lbl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-deep); padding-top: 6px; }
+  .which p { margin: 0; font-size: 18px; line-height: 1.6; color: var(--ink-soft); max-width: 62ch; }
+  .which p b { color: var(--ink); font-weight: 600; }
+  .which .c-cta { margin-top: 26px; }
+  .c-cta { display: flex; align-items: center; gap: clamp(16px, 3vw, 30px); flex-wrap: wrap; }
   .dl { display: inline-flex; align-items: center; gap: 9px; font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--accent-deep); padding: 16px 22px; border: 1px solid var(--line); background: var(--bg); border-radius: 1px; transition: border-color .25s var(--ease), background .25s var(--ease), color .25s var(--ease); }
   .dl svg { width: 17px; height: 17px; flex-shrink: 0; }
   .dl:hover { border-color: var(--accent); background: var(--accent-tint); color: var(--accent); }
-  .closer .dl { background: transparent; border-color: rgba(21,94,117,.28); }
-  .closer .dl:hover { background: #FFFFFF; border-color: var(--accent); }
+  @media (max-width: 880px) { .which { grid-template-columns: 1fr; gap: 14px; } }
 
-  /* three-stat rail */
-  .rail { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 4vw, 56px); margin-top: clamp(44px, 7vh, 76px); }
-  .rail-item { border-top: 2px solid var(--accent); padding-top: 18px; }
-  .rail-item .big { font-family: var(--display); font-weight: 500; font-size: clamp(26px, 3.2vw, 38px); line-height: 1; letter-spacing: -0.02em; color: var(--accent); margin-bottom: 12px; }
-  .rail-item p { margin: 0; font-size: 15.5px; line-height: 1.5; color: var(--ink-soft); }
-  .rail-item p b { color: var(--ink); font-weight: 600; }
-  @media (max-width: 760px) { .rail { grid-template-columns: 1fr; gap: 26px; } }
+  /* ---------- rates ---------- */
+  .price { margin-top: 22px; background: var(--bg-alt); padding: 14px 18px; border-radius: 2px; }
+  .price .row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 8px 0; }
+  .price .row + .row { border-top: 1px solid var(--line); }
+  .price .lbl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
+  .price .lbl small { display: block; font-family: var(--display); font-style: italic; font-size: 13.5px; letter-spacing: 0; text-transform: none; color: var(--line-strong); margin-top: 3px; }
+  .price .amt { font-family: var(--display); font-weight: 500; font-size: clamp(26px, 2.6vw, 32px); letter-spacing: -0.02em; color: var(--accent); white-space: nowrap; }
+  .price .amt span { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); margin-left: 5px; }
+  .np { margin: 14px 0 0; font-style: italic; font-size: 15px; line-height: 1.5; color: var(--ink-soft); }
+  .np b { font-style: normal; font-weight: 600; color: var(--ink); }
+  .which p + p { margin-top: 16px; }
+  .sec { position: relative; padding: clamp(64px, 10vh, 110px) 0; }
 
-  .oneline { font-family: var(--display); font-weight: 500; font-size: clamp(21px, 2.6vw, 30px); line-height: 1.32; letter-spacing: -0.012em; margin: clamp(44px, 7vh, 72px) 0 0; max-width: 34ch; color: var(--ink); text-wrap: balance; }
-
-  /* ---------- sections ---------- */
-  .sec { position: relative; padding: clamp(78px, 13vh, 150px) 0; }
-  .sec.alt { background: var(--bg-alt); }
-  .rule { height: 1px; background: var(--line); border: 0; margin: 0; }
-  .side { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: clamp(26px, 5vw, 78px); align-items: start; }
-  .side-l { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-deep); padding-top: 12px; }
-  .side-l::before { content: ""; display: block; width: 28px; height: 2px; background: var(--accent); margin-bottom: 14px; }
-
-  .dark { background: var(--dark-2); color: var(--dark-text); }
-  .dark .side-l { color: var(--accent-soft); }
-  .dark .side-l::before { background: var(--accent-soft); }
-  .sec.offer { padding: clamp(64px, 10vh, 120px) 0; }
-  .offer-lede { font-family: var(--display); font-weight: 400; font-size: clamp(27px, 3.3vw, 46px); line-height: 1.2; letter-spacing: -0.006em; margin: 0; max-width: 24ch; color: var(--dark-text); text-wrap: balance; hyphens: none; }
-  .offer-lede em { color: var(--accent-soft); font-style: italic; letter-spacing: 0; }
-  .split { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: clamp(24px, 4vw, 56px); margin-top: clamp(38px, 6vh, 58px); padding-top: 30px; border-top: 1px solid var(--line-dark); }
-  .split h3 { font-family: var(--mono); font-size: 11px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-soft); margin: 0 0 12px; }
-  .split p { margin: 0; font-size: 16px; line-height: 1.6; color: var(--dark-muted); }
-  @media (max-width: 760px) { .split { grid-template-columns: 1fr; gap: 28px; } }
-
-  /* targets */
-  .sec-h { font-family: var(--display); font-weight: 500; font-size: clamp(27px, 3.6vw, 42px); line-height: 1.08; letter-spacing: -0.022em; margin: 0 0 clamp(28px, 4vh, 42px); color: var(--ink); max-width: 20ch; text-wrap: balance; }
-  .targets { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 0 clamp(28px, 4vw, 56px); list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
-  .targets li { font-size: 17px; line-height: 1.5; color: var(--ink); padding: 18px 0 18px 26px; border-bottom: 1px solid var(--line); position: relative; }
-  .targets li::before { content: ""; position: absolute; left: 0; top: 30px; width: 12px; height: 1px; background: var(--accent); }
-  @media (max-width: 760px) { .targets { grid-template-columns: 1fr; } }
-
-  /* cycle */
-  .cycle { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: clamp(26px, 4vw, 52px); }
-  .cyc { border-top: 2px solid var(--accent); padding-top: 20px; }
-  .cyc .wk { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-deep); }
-  .cyc h3 { font-family: var(--display); font-weight: 600; font-size: clamp(19px, 2vw, 23px); letter-spacing: -0.012em; margin: 12px 0 16px; color: var(--ink); }
-  .cyc ul { margin: 0; padding: 0; list-style: none; }
-  .cyc li { font-size: 15.5px; line-height: 1.5; color: var(--ink-soft); padding: 9px 0 9px 20px; position: relative; }
-  .cyc li::before { content: ""; position: absolute; left: 0; top: 17px; width: 7px; height: 1px; background: var(--line-strong); }
-  @media (max-width: 860px) { .cycle { grid-template-columns: 1fr; gap: 34px; } }
-
-  /* your role + fine print */
-  .pair { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: clamp(26px, 4vw, 56px); padding-top: 28px; border-top: 1px solid var(--line); }
-  .pair h3 { font-family: var(--mono); font-size: 11px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-deep); margin: 0 0 12px; }
-  .pair h4 { font-family: var(--display); font-weight: 600; font-size: clamp(18px, 2vw, 22px); letter-spacing: -0.012em; margin: 0 0 12px; color: var(--ink); }
-  .pair p { margin: 0 0 12px; font-size: 16px; line-height: 1.6; color: var(--ink-soft); }
-  .pair p:last-child { margin-bottom: 0; }
-  .pair ul { margin: 12px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 4px 20px; }
-  .pair ul li { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em; color: var(--ink-soft); padding: 6px 0 6px 16px; position: relative; }
-  .pair ul li::before { content: ""; position: absolute; left: 0; top: 15px; width: 6px; height: 1px; background: var(--accent); }
-  @media (max-width: 760px) { .pair { grid-template-columns: 1fr; gap: 30px; } .pair ul { grid-template-columns: 1fr; } }
-
-  .fit { margin: clamp(40px, 6vh, 64px) 0 0; padding-top: 26px; border-top: 1px solid var(--line); font-size: 17px; line-height: 1.6; color: var(--ink-soft); max-width: 66ch; }
-  .fit b { color: var(--ink); font-weight: 600; }
-
-  /* one-pager capture */
-  .onepager { border-top: 2px solid var(--accent); padding-top: clamp(26px, 4vh, 38px); display: grid; grid-template-columns: minmax(0,1fr) minmax(280px, 400px); gap: clamp(30px, 5vw, 76px); align-items: start; }
-  .onepager h2 { font-family: var(--display); font-weight: 500; font-size: clamp(27px, 3.4vw, 40px); line-height: 1.08; letter-spacing: -0.022em; margin: 0 0 16px; color: var(--ink); max-width: 18ch; text-wrap: balance; }
-  .onepager > div > p { margin: 0 0 14px; font-size: 17px; line-height: 1.62; color: var(--ink-soft); max-width: 46ch; }
-  .op-list { margin: 20px 0 0; padding: 0; list-style: none; }
-  .op-list li { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; color: var(--ink-soft); padding: 7px 0 7px 18px; position: relative; }
-  .op-list li::before { content: ""; position: absolute; left: 0; top: 16px; width: 8px; height: 1px; background: var(--accent); }
-  .op-form .field { margin-bottom: 16px; }
-  .op-form label { display: block; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px; }
-  .op-form input { width: 100%; font-family: var(--display); font-size: 17px; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 1px; padding: 13px 14px; transition: border-color .25s; }
-  .op-form input:focus { border-color: var(--accent); outline: none; }
-  .op-form input::placeholder { color: #94A3B8; }
-  .op-form .btn { width: 100%; justify-content: center; margin-top: 6px; }
-  .op-form .fine { font-family: var(--mono); font-size: 10.5px; line-height: 1.7; letter-spacing: 0.02em; color: var(--ink-soft); margin: 16px 0 0; }
-  .op-form .fine a { color: var(--accent); }
-  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-  @media (max-width: 880px) { .onepager { grid-template-columns: 1fr; gap: 30px; } }
-
-  /* closer */
-  .closer { background: var(--accent-tint); padding: clamp(70px, 11vh, 132px) 0; }
+  /* ---------- closer + footer ---------- */
+  .closer { background: var(--accent-tint); padding: clamp(64px, 10vh, 120px) 0; }
   .closer h2 { font-family: var(--display); font-weight: 500; font-size: clamp(30px, 4.4vw, 54px); line-height: 1.06; letter-spacing: -0.026em; margin: 0; max-width: 20ch; color: var(--ink); text-wrap: balance; }
   .closer h2 em { color: var(--accent); font-style: italic; }
   .closer p { font-size: 17.5px; line-height: 1.65; color: var(--ink-soft); max-width: 52ch; margin: 26px 0 0; }
   .closer .c-cta { margin-top: 36px; }
+  .closer .dl { background: transparent; border-color: rgba(21,94,117,.28); }
+  .closer .dl:hover { background: #FFFFFF; border-color: var(--accent); }
 
   footer { background: var(--dark); color: var(--dark-text); padding: clamp(50px, 8vh, 84px) 0 40px; }
   .foot-top { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; align-items: flex-start; }
@@ -232,18 +217,13 @@
   .foot-links a { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: color-mix(in srgb, var(--dark-text) 85%, var(--dark)); text-decoration: none; transition: color .25s; }
   .foot-links a:hover { color: var(--accent-soft); }
   .foot-bottom { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; color: var(--dark-muted); line-height: 1.8; margin-top: 46px; padding-top: 22px; border-top: 1px solid var(--line-dark); }
-
-  @media (max-width: 880px) {
-    .side { grid-template-columns: 1fr; gap: 18px; }
-    .side-l { padding-top: 0; }
-  }
 </style>
 </head>
 <body>
 <a id="top"></a>
 <div class="grain" aria-hidden="true"></div>
 
-<!-- HERO -->
+<!-- HERO + THE TWO OPTIONS -->
 <section class="cover">
   <div class="wrap">
     <div class="cover-top">
@@ -258,208 +238,94 @@
       <a class="wm-nav" href="index.html">Consulting &rarr;</a>
     </div>
 
-    <div data-reveal style="transition-delay:.05s">
-      <span class="role">For technology executives</span>
-      <h1 class="cover-h">The Technical Leadership Residency</h1>
-      <p class="c-sub">Help your strongest technical leaders lead high-stakes work <em>without constant executive intervention.</em></p>
-      <div class="c-cta">
-        <a class="btn" href="https://calendar.app.google/6GFwQByUaJ4S3Rk66" target="_blank" rel="noopener">Talk about a leader <span class="arr">&#8599;</span></a>
-        <a class="dl" href="#one-pager">
-          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3v9m0 0 3.4-3.4M10 12 6.6 8.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.5 14v1.5a1.5 1.5 0 0 0 1.5 1.5h10a1.5 1.5 0 0 0 1.5-1.5V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          Get the one-pager
-        </a>
-      </div>
-    </div>
-
-    <div class="rail" data-reveal style="transition-delay:.16s">
-      <div class="rail-item">
-        <div class="big">1:1</div>
-        <p><b>Coaching, not training.</b> A senior practitioner beside your leader.</p>
-      </div>
-      <div class="rail-item">
-        <div class="big">1 outcome</div>
-        <p><b>A real business result</b> with measurable indicators.</p>
-      </div>
-      <div class="rail-item">
-        <div class="big">90 days</div>
-        <p><b>One cycle per outcome.</b> Renew it, sharpen it, or stop.</p>
-      </div>
-    </div>
-
-    <p class="oneline" data-reveal style="transition-delay:.24s">I coach your leader one-on-one while they lead the real work already on their plate.</p>
-  </div>
-</section>
-
-<!-- WHAT IT ASKS OF YOU -->
-<section class="sec dark offer">
-  <div class="wrap side">
-    <div class="side-l">What it asks<br>of you</div>
-    <div>
-      <p class="offer-lede" data-reveal>An hour at the start, an hour at the end. In between, the coaching load comes off your calendar and <em>the initiative keeps moving.</em></p>
-      <div class="split" data-reveal>
-        <div>
-          <h3>If you'd rather stay out of it</h3>
-          <p>Your leader sets the outcome with me. You join the readout at 90 days.</p>
-        </div>
-        <div>
-          <h3>And to be clear</h3>
-          <p>I'm not there to replace you as their manager. I'm there to take one initiative's coaching load off your plate.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHAT A CYCLE CAN TARGET -->
-<section class="sec">
-  <div class="wrap side">
-    <div class="side-l">Outcomes</div>
-    <div data-reveal>
-      <h2 class="sec-h">What a cycle can target</h2>
-      <ul class="targets">
-        <li>An AI or technology initiative, taken to something the organization can actually use</li>
-        <li>Stakeholder alignment around a complex initiative</li>
-        <li>A stalled cross-functional project, moving toward launch again</li>
-        <li>The shift from doing the technical work to leading others through it</li>
-        <li>Technical direction and decisions people actually follow</li>
-        <li>Bigger work without burnout, so evenings and weekends stop being the release valve</li>
-        <li>Clarity on where and how they want to make their impact</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- THE 90 DAY CYCLE -->
-<section class="sec alt">
-  <div class="wrap side">
-    <div class="side-l">Structure</div>
-    <div data-reveal>
-      <h2 class="sec-h">The 90 day cycle</h2>
-      <div class="cycle">
-        <div class="cyc">
-          <div class="wk">Week 1</div>
-          <h3>Set the target</h3>
-          <ul>
-            <li>A 90 minute planning session</li>
-            <li>Optional 30 minutes with their manager</li>
-            <li>A written plan the leader owns</li>
-          </ul>
-        </div>
-        <div class="cyc">
-          <div class="wk">Weeks 2 to 11</div>
-          <h3>Lead the work</h3>
-          <ul>
-            <li>A 60 minute session every other week</li>
-            <li>Close reviews of real work when it matters</li>
-            <li>Reachable in between</li>
-          </ul>
-        </div>
-        <div class="cyc">
-          <div class="wk">Week 12</div>
-          <h3>Review, reset</h3>
-          <ul>
-            <li>Progress against the indicators</li>
-            <li>The plan updated with where it landed</li>
-            <li>The next outcome, or this one sharpened</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- YOUR ROLE -->
-<section class="sec">
-  <div class="wrap side">
-    <div class="side-l">Your role</div>
-    <div data-reveal>
-      <h2 class="sec-h">Less coaching load on your calendar. More ownership in theirs.</h2>
-      <div class="pair">
-        <div>
-          <h3>If you want a say in the outcome</h3>
-          <p>Thirty minutes in week 1 to set it with your leader, then the readout at 90 days.</p>
-        </div>
-        <div>
-          <h3>If you'd rather stay out of it</h3>
-          <p>Your leader sets the outcome with me. You join them for the readout at 90 days.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- THE FINE PRINT -->
-<section class="sec alt">
-  <div class="wrap side">
-    <div class="side-l">The fine print</div>
-    <div data-reveal>
-      <div class="pair">
-        <div>
-          <h3>Add-on &middot; three or more leaders</h3>
-          <h4>Organizational Leadership Insights Review</h4>
-          <p>With three or more leaders in residency, you get an end-of-cycle read across the group:</p>
-          <ul>
-            <li>Anonymized themes</li>
-            <li>Recurring barriers</li>
-            <li>Organizational strengths</li>
-            <li>Recommendations</li>
-          </ul>
-        </div>
-        <div>
-          <h3>One rule</h3>
-          <h4>Confidential by design</h4>
-          <p>Coaching conversations stay confidential. You get progress against the outcome, never what was said in a session.</p>
-          <p>That's exactly why a leader will tell me the truth about what's actually hard.</p>
-        </div>
-      </div>
-      <p class="fit"><b>Best fit:</b> strong technical leaders taking on more important initiatives, leading across teams without formal authority, or working in real ambiguity. Built for CTOs, VPs of Engineering, and executives developing high-potential technical leaders.</p>
-      <p class="fit">Founding rates are open for engagements starting in 2026, while I validate the residency with a small number of early client organizations. I'll walk you through pricing on the call.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ONE-PAGER -->
-<section class="sec" id="one-pager">
-  <div class="wrap side">
-    <div class="side-l">The one-pager</div>
-    <div class="onepager" data-reveal>
+    <div class="hero-grid" data-reveal style="transition-delay:.05s">
       <div>
-        <h2>Take the whole residency with you</h2>
-        <p>Two pages with the structure, what a cycle can target, what it asks of you, and the rates. Built for forwarding to whoever else has to say yes.</p>
-        <p>Tell me where to send it and it's yours right away.</p>
-        <ul class="op-list">
-          <li>The full 90 day cycle, week by week</li>
-          <li>What a cycle can target</li>
-          <li>Rates, including founding pricing for 2026</li>
-        </ul>
+        <span class="role">1:1 coaching for technical leaders</span>
+        <h1 class="cover-h">Coaching for technical leaders, <em>in two formats.</em></h1>
       </div>
-      <form
-        class="op-form"
-        name="residency-download"
-        method="POST"
-        action="/residency.html"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-      >
-        <input type="hidden" name="form-name" value="residency-download" />
-        <p class="hp">
-          <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
-        </p>
-        <div class="field">
-          <label for="op-name">Name</label>
-          <input id="op-name" name="name" type="text" autocomplete="name" required placeholder="Your name" />
+      <!-- QUOTE SLOT. When there is a real quote, delete the .hero-art block below and
+           uncomment this figure. Fill the <p>, the <b> (name) and the <span> (title, company).
+      <figure class="pull">
+        <svg class="pull-orbit" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+          <circle cx="200" cy="200" r="170" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 7"/>
+          <circle cx="200" cy="200" r="100" stroke="currentColor" stroke-width="1.3"/>
+          <circle cx="200" cy="200" r="54" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 5"/>
+          <circle cx="200" cy="200" r="11" fill="currentColor"/>
+        </svg>
+        <blockquote>
+          <p>QUOTE TEXT</p>
+        </blockquote>
+        <figcaption><b>Name</b><span>Title, Company</span></figcaption>
+      </figure>
+      -->
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 400 400" fill="none">
+          <line x1="200" y1="200" x2="200" y2="44" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 4"/>
+          <line x1="200" y1="200" x2="352" y2="288" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 4"/>
+          <line x1="200" y1="200" x2="48" y2="288" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2 4"/>
+          <circle cx="200" cy="200" r="170" stroke="#CBD5E1" stroke-width="1.2" stroke-dasharray="3 7"/>
+          <circle cx="200" cy="200" r="100" stroke="#64748B" stroke-width="1.3"/>
+          <circle cx="200" cy="200" r="54" stroke="#CBD5E1" stroke-width="1.2" stroke-dasharray="3 5"/>
+          <circle cx="200" cy="200" r="24" fill="#155E75" opacity="0.14"/>
+          <circle cx="200" cy="200" r="11" fill="#155E75"/>
+          <circle cx="200" cy="55" r="6" fill="#64748B"/>
+          <circle cx="335" cy="125" r="5" fill="#64748B"/>
+          <circle cx="320" cy="300" r="6.5" fill="#1E293B"/>
+          <circle cx="80" cy="298" r="5" fill="#64748B"/>
+          <circle cx="45" cy="170" r="4" fill="#94A3B8"/>
+          <circle cx="150" cy="95" r="4" fill="#64748B"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="options" data-reveal style="transition-delay:.14s">
+      <div class="opt">
+        <div class="kick">Regular format</div>
+        <h2>Leadership Coaching</h2>
+        <p class="for">For a leader taking on more than they've handled before, who wants someone to think it through with.</p>
+        <ul>
+          <li><b>We set goals in the first month</b> and write them down.</li>
+          <li><b>An hour together, every other week or so,</b> spent on whatever is actually in front of them.</li>
+          <li><b>We check in on the goals periodically,</b> but also accommodate whatever is highest on your mind that week.</li>
+          <li><b>A couple of check-ins with their manager or HR</b> across the engagement, to align on themes and general progress.</li>
+          <li><b>Optionally, sessions are transcribed and consolidated into a progress write-up</b> that only they see, for their own performance reviews and goal tracking.</li>
+        </ul>
+        <div class="price">
+          <div class="row"><div class="lbl">3 month term<small>per leader, per month &middot; $2,100 total</small></div><div class="amt">$700<span>/ mo</span></div></div>
+          <div class="row"><div class="lbl">6 month term<small>10% off, per leader, per month &middot; $3,780 total</small></div><div class="amt">$630<span>/ mo</span></div></div>
         </div>
-        <div class="field">
-          <label for="op-email">Work email</label>
-          <input id="op-email" name="email" type="email" autocomplete="email" required placeholder="you@company.com" />
+        <p class="np"><b>Nonprofit rate:</b> 30% off either term.</p>
+      </div>
+      <div class="opt">
+        <div class="kick">Heavier format</div>
+        <h2>The Technical Leadership Residency</h2>
+        <p class="for">For a leader holding a business initiative right now, who needs it to work.</p>
+        <ul>
+          <li><b>One business outcome per 90 day cycle,</b> with indicators we can measure, written up as a plan they own.</li>
+          <li><b>An hour every other week,</b> plus reviewing real work with them (designs, plans, decisions) when it matters.</li>
+          <li><b>Async review of progress toward the outcome</b> between sessions, and they can reach me when something breaks. Those weeks are the point.</li>
+          <li><b>At day 90, a readout to their executive:</b> where the indicators landed and what's next.</li>
+          <li><b>Optionally, sessions are transcribed and consolidated into a progress write-up</b> that only they see, for their own performance reviews and goal tracking.</li>
+        </ul>
+        <div class="price">
+          <div class="row"><div class="lbl">One cycle &middot; 3 months<small>per leader, per month &middot; $3,000 total</small></div><div class="amt">$1,000<span>/ mo</span></div></div>
+          <div class="row"><div class="lbl">Two cycles &middot; 6 months<small>10% off, per leader, per month &middot; $5,400 total</small></div><div class="amt">$900<span>/ mo</span></div></div>
         </div>
-        <div class="field">
-          <label for="op-company">Organization (optional)</label>
-          <input id="op-company" name="company" type="text" autocomplete="organization" placeholder="Where you work" />
+        <p class="np"><b>Three or more leaders:</b> adds a written summary across the group at the end of the cycle. Themes, recurring blockers, recommendations. Nothing attributed.</p>
+      </div>
+    </div>
+
+    <div class="which" data-reveal style="transition-delay:.22s">
+      <div class="lbl">Which one</div>
+      <div>
+        <p><b>Most people start with coaching.</b> If a particular initiative needs more, we switch to a cycle of residency for 90 days, then back. The residency costs more because I'm co-owning a business outcome with the leader, which is more of my time and more of my risk. Everything is billed monthly, and terms renew if you want them to. The rates shown are for leaders up through the director level. Executive and C-suite engagements are scoped individually and run somewhat higher.</p>
+        <p><b>I'm based in Richmond, Virginia.</b> Leaders here can meet in person. Everyone else is on video, which works fine.</p>
+        <p><b>In both formats, what's said in a session stays between me and the leader.</b> Their manager gets progress against the goals, not the conversation. That's the condition that makes people honest, so I don't bend it.</p>
+        <div class="c-cta">
+          <a class="btn" href="https://calendar.app.google/6GFwQByUaJ4S3Rk66" target="_blank" rel="noopener">Book a call <span class="arr">&#8599;</span></a>
+          <a class="tlink" href="mailto:erin@opensetconsulting.com">erin@opensetconsulting.com</a>
         </div>
-        <button class="btn" type="submit">Send me the one-pager <span class="arr">&rarr;</span></button>
-        <p class="fine">Your download starts on the next page. I'll keep your address so I can send a note now and then about leading technical work. Nothing frequent, and I won't share it. <a href="privacy.html">Privacy policy</a>.</p>
-      </form>
+      </div>
     </div>
   </div>
 </section>
@@ -468,14 +334,10 @@
 <section class="closer">
   <div class="wrap">
     <div data-reveal>
-      <h2>Build leaders who can carry the next hard thing, and come out <em>proud, not burned out.</em></h2>
-      <p>Tell me about the leader and the initiative. If a residency isn't the right shape for it, I'll say so, and you'll still leave with a clearer read on what they need.</p>
+      <h2>If you have a leader in mind, or it's for you, <em>tell me about it.</em></h2>
+      <p>I'll tell you which format fits. If neither does, I'll say that, and you'll still leave with a clearer read on what's needed.</p>
       <div class="c-cta">
-        <a class="btn" href="https://calendar.app.google/6GFwQByUaJ4S3Rk66" target="_blank" rel="noopener">Book a conversation <span class="arr">&#8599;</span></a>
-        <a class="dl" href="#one-pager">
-          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3v9m0 0 3.4-3.4M10 12 6.6 8.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.5 14v1.5a1.5 1.5 0 0 0 1.5 1.5h10a1.5 1.5 0 0 0 1.5-1.5V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          Get the one-pager
-        </a>
+        <a class="btn" href="https://calendar.app.google/6GFwQByUaJ4S3Rk66" target="_blank" rel="noopener">Book a call <span class="arr">&#8599;</span></a>
         <a class="tlink" href="mailto:erin@opensetconsulting.com">erin@opensetconsulting.com</a>
       </div>
     </div>
@@ -494,7 +356,6 @@
       </div>
       <div class="foot-links">
         <a href="index.html">Consulting</a>
-        <a href="coaching.html#one-pager">One-pager</a>
         <a href="https://www.linkedin.com/in/eringeoghan/" target="_blank" rel="noopener">LinkedIn &#8599;</a>
         <a href="mailto:erin@opensetconsulting.com">Email</a>
         <a href="https://calendar.app.google/6GFwQByUaJ4S3Rk66" target="_blank" rel="noopener">Book a call</a>

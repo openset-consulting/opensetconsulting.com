@@ -29,7 +29,7 @@ test('Netlify contact form is fully wired', () => {
 });
 
 test('referenced local assets exist on disk', () => {
-  for (const f of ['erin-geoghan.jpg', 'favicon.svg', 'og-image.png', 'privacy.html', 'thanks.html', 'coaching.html', 'residency.html', 'technical-leadership-residency.pdf', 'head-of-ai-checklist.html', 'erin-illustration.jpg']) {
+  for (const f of ['erin-geoghan.jpg', 'favicon.svg', 'og-image.png', 'privacy.html', 'thanks.html', 'coaching.html', 'head-of-ai-checklist.html', 'erin-illustration.jpg']) {
     assert.ok(existsSync(join(root, f)), `missing asset: ${f}`);
   }
 });
@@ -99,7 +99,7 @@ test('activation cycle framing is present', () => {
 });
 
 test('white palette holds — no tan/terracotta regression', () => {
-  for (const f of ['index.html', 'coaching.html', 'residency.html', 'privacy.html', 'thanks.html', 'one-pager.html', 'og-image.html', 'favicon.svg', 'head-of-ai-checklist.html']) {
+  for (const f of ['index.html', 'coaching.html', 'privacy.html', 'thanks.html', 'one-pager.html', 'og-image.html', 'favicon.svg', 'head-of-ai-checklist.html']) {
     assert.doesNotMatch(read(f), /F4F1EA|ECE7DB|A8392A|1F4D47|C2912F/i, `${f} must not contain old palette colors`);
   }
   assert.match(html, /<meta name="theme-color" content="#FFFFFF"/i, 'theme-color is white');
@@ -119,34 +119,21 @@ test('coaching page is wired to the consulting page and holds the voice rules', 
   assert.match(html, /href="coaching\.html"/, 'consulting page must link to coaching');
   assert.match(coaching, /href="index\.html"/, 'coaching page must link back to consulting');
   assert.match(coaching, /Open Set Coaching/, 'coaching page is branded');
-  assert.match(coaching, /The Technical Leadership Residency/, 'the offering must be named');
+  assert.match(coaching, /The Technical Leadership Residency/, 'the residency must be named');
+  assert.match(coaching, /Leadership Coaching/, 'the coaching program must be named');
   assert.doesNotMatch(coaching, /\u2014/, 'no em dashes (voice rule)');
-  assert.doesNotMatch(coaching, /\$\s?\d/, 'pricing stays off the coaching page');
+  for (const price of ['$700', '$630', '$1,000', '$900']) {
+    assert.match(coaching, new RegExp(price.replace(/[$,]/g, '\\$&')), `rate ${price} is on the coaching page`);
+  }
+  assert.match(coaching, /30% off/, 'nonprofit discount is stated');
+  assert.match(coaching, /<title>[^<]*Richmond/, 'coaching title carries the location');
+  assert.match(coaching, /addressLocality": "Richmond"/, 'coaching structured data carries the address');
+  assert.ok(existsSync(join(root, 'llms.txt')), 'llms.txt should exist');
+  assert.match(read('llms.txt'), /Richmond, Virginia/, 'llms.txt names the location');
+  assert.doesNotMatch(coaching.replace(/<!--[\s\S]*?-->/g, ''), /placeholder|QUOTE TEXT/i, 'no placeholder copy may ship');
+  assert.doesNotMatch(coaching, /residency-download|one-pager|\.pdf/i, 'the gated download is gone');
   const h1s = (coaching.match(/<h1[\s>]/gi) || []).length;
   assert.equal(h1s, 1, 'coaching page should have exactly one h1');
-});
-
-test('one-pager download is gated behind the email capture form', () => {
-  const coaching = read('coaching.html');
-  const delivery = read('residency.html');
-  assert.match(coaching, /<form[^>]*\bname="residency-download"/i, 'capture form must be name="residency-download"');
-  assert.match(coaching, /<form[^>]*method="POST"/i, 'capture form must POST');
-  assert.match(coaching, /<form[^>]*action="\/?residency\.html"/i, 'capture form action -> delivery page');
-  assert.match(coaching, /data-netlify="true"/i, 'data-netlify flag');
-  assert.match(coaching, /data-netlify-honeypot="bot-field"/i, 'honeypot configured');
-  assert.match(coaching, /name="bot-field"/i, 'honeypot field present');
-  assert.match(
-    coaching,
-    /<input[^>]*type="hidden"[^>]*name="form-name"[^>]*value="residency-download"/i,
-    'hidden form-name input (required for Netlify detection)'
-  );
-  assert.match(coaching, /<input[^>]*id="op-email"[^>]*type="email"[^>]*required/i, 'email is required');
-  assert.doesNotMatch(coaching, /href="technical-leadership-residency\.pdf"/i, 'the PDF must never be linked directly from the coaching page');
-  assert.match(coaching, /id="one-pager"/, 'the capture section must be anchorable');
-  assert.match(delivery, /href="technical-leadership-residency\.pdf"/i, 'delivery page serves the PDF');
-  assert.match(delivery, /content="noindex, nofollow"/i, 'delivery page must be noindex');
-  assert.doesNotMatch(delivery, /\u2014/, 'no em dashes (voice rule)');
-  assert.match(read('robots.txt'), /Disallow: \/residency\.html/, 'delivery page disallowed in robots.txt');
 });
 
 test('head of AI checklist page is complete and on-brand', () => {
